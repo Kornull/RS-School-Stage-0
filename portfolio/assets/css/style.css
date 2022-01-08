@@ -20,6 +20,7 @@
   --color-white: #fff;
   --font1: 60px;
   --font2: 20px;
+  --font3: 40px;
 }
 
 :focus,
@@ -52,7 +53,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  background:var(--color-black);
+  background: var(--color-black);
 }
 
 *,
@@ -135,6 +136,10 @@ p {
 .main {
   margin-top: -100px;
   width: 1440px;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
 }
 
 /* Header
@@ -223,6 +228,7 @@ p {
   width: 100%;
   height: 910px;
   background: url('../img/bg/bg.jpg') center center/cover no-repeat;
+  margin-bottom: 90px;
 }
 
 .hero__item {
@@ -268,4 +274,97 @@ p {
 
 .btn:hover {
   color: var(--color-white);
+}
+
+/* Section
+==================== */
+.section__title {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 274px;
+  height: 2px;
+  background: #bdae82;
+  position: absolute;
+  top: 49%;
+  left: 0;
+}
+
+.section__title::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 274px;
+  height: 2px;
+  background: #bdae82;
+  position: absolute;
+  top: 49%;
+  right: 0;
+}
+
+
+
+/* Skills
+==================== */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.skills__title {
+  display: block;
+  background: var(--color-black);
+  font-size: var(--font3);
+  font-weight: 700;
+  color: var(--color-gold);
+  overflow-x: hidden
+}
+
+.sckills__items {
+  display: flex;
+}
+
+.skills__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 15px;
+  width: 330px;
+  text-align: center;
+}
+
+.skills__img {
+  margin-bottom: 50px;
+}
+
+.skills__images {
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.slills__name {
+  font-size: inherit;
+  line-height: 2;
+  font-weight: 700;
+  margin-bottom: 21px;
+}
+
+.scills__description {
+  width: 280px;
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 400;
 }
