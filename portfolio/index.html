@@ -4,7 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&family=Roboto&display=swap"
     rel="stylesheet">
@@ -28,19 +35,19 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#">Skills</a>
+              <a href="#skill">Skills</a>
             </li>
             <li class="nav__item">
-              <a href="#">Portfolio</a>
+              <a href="#portfolio">Portfolio</a>
             </li>
             <li class="nav__item">
-              <a href="#">Video</a>
+              <a href="#video">Video</a>
             </li>
             <li class="nav__item">
-              <a href="#">Price</a>
+              <a href="#price">Price</a>
             </li>
             <li class="nav__item">
-              <a href="#">Contacts</a>
+              <a href="#contact">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -75,7 +82,7 @@
 
 
       <!-- Skills -->
-      <section class="skills">
+      <section class="skills" id="skill">
         <div class="section__title">
           <h2 class="skills__title">Skills</h2>
         </div>
@@ -141,7 +148,7 @@
       </section>
 
       <!-- Portfolio -->
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
         <div class="section__title section--portfolio">
           <h2 class="portfolio__title">Portfolio</h2>
         </div>
@@ -182,7 +189,7 @@
 
 
       <!-- Video -->
-      <section class="video">
+      <section class="video" id="video">
         <div class="section__title">
           <h2 class="skills__title">Video</h2>
         </div>
@@ -196,7 +203,7 @@
       </section>
 
       <!-- Price -->
-      <section class="price">
+      <section class="price" id="price">
         <div class="section__title section--price">
           <h2 class="skills__title">Price</h2>
         </div>
@@ -248,7 +255,7 @@
       </section>
     </main>
 
-    <section class="contacts">
+    <section class="contacts" id="contact">
       <div class="contacts__form--content">
         <h2 class="contact__title">Contact me</h2>
         <form class="form" action="/" method="post">
@@ -268,9 +275,54 @@
       </div>
     </section>
 
+    <footer class="footer">
+      <div class="footer__data">&copy; <span>2022</span>
+        <span><a href="https://github.com/Kornull" target="_blank">github</a></span>
+      </div>
+
+      <div class="footer__text">
+        <a href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a>
+      </div>
+
+      <div class="footer__social">
+
+        <ul class="social__list">
+          <li class="social__link">
+            <a class="footer__social--links" href="https://www.instagram.com/" target="_blank">
+              <svg class="icon">
+                <use xlink:href="./assets/img/icon/sprite.svg#inst"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__link">
+            <a class="footer__social--links" href="https://www.instagram.com/" target="_blank">
+              <svg class="icon">
+                <use xlink:href="./assets/img/icon/sprite.svg#fb"></use>
+              </svg>
+            </a>
+          </li>
 
 
-    <footer class="footer"></footer>
+          <li class="social__link">
+            <a class="footer__social--links" href="https://twitter.com/" target="_blank">
+              <svg class="icon">
+                <use xlink:href="./assets/img/icon/sprite.svg#tw"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__link">
+            <a class="footer__social--links" href="https://www.pinterest.com/" target="_blank">
+              <svg class="icon">
+                <use xlink:href="./assets/img/icon/sprite.svg#pinterest"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </footer>
   </div>
 </body>
 
