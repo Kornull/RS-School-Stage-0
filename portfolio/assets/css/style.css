@@ -404,6 +404,7 @@ h2 {
 
 .sckills__items {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -413,21 +414,26 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin: 0 15px;
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   text-align: center;
 }
 
 .skills__img {
+  max-width: 100%;
+
   margin-bottom: 50px;
 }
 
 .skills__images {
-  width: auto;
+
   display: block;
   margin: 0 auto;
 }
 
 .slills__name {
+  width: 100%;
+  max-width: 200px;
   font-size: inherit;
   line-height: 2;
   font-weight: 700;
@@ -435,7 +441,8 @@ h2 {
 }
 
 .scills__description {
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   font-size: 18px;
   line-height: 2;
   font-weight: 400;
@@ -483,7 +490,16 @@ h2 {
 }
 
 .works__image {
+  width: 33%;
+  max-width: 450px;
   margin-bottom: 25px;
+}
+
+.work__img {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+
 }
 
 /* Video */
@@ -565,4 +581,72 @@ h2 {
   display: block;
   font-size: 18px;
   line-height: 2;
+}
+
+/* Contacts
+================= */
+.contacts {
+  width: 100%;
+  min-width: 1440px;
+  min-height: 74.5vh;
+  background: #000 url('../img/bg/contacts.jpg') center center/cover no-repeat;
+  position: relative;
+}
+
+.contacts__form--content {
+  width: 100%;
+  max-width: 450px;
+  position: absolute;
+  right: 20px;
+  top: 50px
+}
+
+.contact__title {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: var(--color-gold);
+  font-size: var(--font3);
+  margin-bottom: 30px;
+}
+
+
+
+.form__group input {
+  color: var(--color-gold);
+  font-size: var(--font2);
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  border: #bdae82 solid 2px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+.form__group textarea {
+  resize: none;
+  color: var(--color-gold);
+  font-size: var(--font2);
+  line-height: 2;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: #bdae82 solid 2px;
+  height: 100px;
+  margin-bottom: 12px;
+  padding-left: 5px;
+}
+
+::placeholder {
+  font-family: 'Inter', sans-serif;
+  color: #bdae82;
+  font-size: var(--font2);
+  line-height: 2;
+  padding:2px 0 0 13px;
+}
+
+/* Media
+================ */
+@media (max-width: 1399px) {
+  .main {
+    padding: 0 20px;
+  }
 }
