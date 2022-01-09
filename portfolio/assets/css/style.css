@@ -238,7 +238,8 @@ h2 {
 /* Hero
 ================== */
 .hero {
-  position: relative;
+  display: flex;
+  justify-content: start;
   margin-top: 10px;
   width: 100%;
   max-width: 1440px;
@@ -251,9 +252,9 @@ h2 {
 .hero__item {
   width: 500px;
   height: 330px;
-  position: absolute;
-  top: 250px;
-  left: 80px;
+  padding-top: 250px;
+  padding-left: 80px;
+
 
 }
 
@@ -590,21 +591,21 @@ h2 {
 /* Contacts
 ================= */
 .contacts {
+  display: flex;
+  justify-content: end;
   width: 100%;
-  min-width: 1440px;
-  min-height: 74.5vh;
+  max-width: 1440px;
   height: 700px;
   min-height: 600px;
   background: #000 url('../img/bg/contacts.jpg') center center/cover no-repeat;
-  position: relative;
 }
 
 .contacts__form--content {
+  padding-top: 50px;
+  margin-right: 20px;
   width: 100%;
   max-width: 450px;
-  position: absolute;
-  right: 20px;
-  top: 50px
+
 }
 
 .contact__title {
@@ -658,7 +659,7 @@ h2 {
   flex-wrap: wrap;
   width: 100%;
   height: 150px;
-  min-width: 1440px;
+  max-width: 1440px;
   padding: 0 20px;
 }
 
@@ -699,11 +700,13 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+
 .social__link {
   margin-right: 20px;
 }
+
 .social__link:last-child {
- margin-right: 0;
+  margin-right: 0;
 }
 
 .footer__social--links svg {
