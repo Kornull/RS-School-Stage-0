@@ -1,2 +1,1 @@
-# kornull-JSFEPRESCHOOL
-Private repository for @kornull
+https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/portfolio/
