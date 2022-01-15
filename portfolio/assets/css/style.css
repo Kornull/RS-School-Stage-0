@@ -32,9 +32,7 @@ a:focus,
 a:active {
   outline: none;
 }
-:active {
-  background: var(--color-gold);
-}
+
 nav,
 footer,
 header,
