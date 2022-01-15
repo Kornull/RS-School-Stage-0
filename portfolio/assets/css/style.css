@@ -32,7 +32,9 @@ a:focus,
 a:active {
   outline: none;
 }
-
+:active {
+  background: var(--color-gold);
+}
 nav,
 footer,
 header,
@@ -724,5 +726,3 @@ h2 {
   width: 32px;
   height: 32px;
 }
-
-
