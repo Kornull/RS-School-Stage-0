@@ -1,3 +1,4 @@
+
 https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/portfolio/
 .gitignore
 README.md
@@ -14,3 +15,4 @@ portfolio/assets/img/svg/video.svg
 portfolio/assets/img/videoButton/play-btn.svg
 portfolio/assets/js/script.js
 portfolio/index.html
+
