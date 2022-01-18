@@ -622,8 +622,6 @@ h2 {
   margin-bottom: 30px;
 }
 
-
-
 .form__group input {
   color: var(--color-gold);
   font-size: var(--font2);
@@ -651,15 +649,17 @@ h2 {
 .form__group input:focus,
 .form__group textarea:focus {
   border: #bdae82 solid 2px;
+  color: var(--color-white);
 }
 
 ::placeholder {
   font-family: 'Inter', sans-serif;
-  color: #bdae82;
+  color: inherit;
   font-size: var(--font2);
   line-height: 2;
   padding: 2px 0 0 13px;
 }
+
 
 /* Footer
 ================ */
