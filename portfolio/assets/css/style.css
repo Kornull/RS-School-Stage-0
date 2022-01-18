@@ -648,6 +648,7 @@ h2 {
 .form__group input:focus,
 .form__group textarea:focus {
   border: #bdae82 solid 2.5px;
+  border-radius: 7px;
   color: var(--color-white);
 }
 
