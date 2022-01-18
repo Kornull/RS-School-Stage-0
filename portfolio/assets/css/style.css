@@ -131,6 +131,7 @@ html {
   margin: 0 auto;
   width: 100%;
   max-width: 1440px;
+  padding: 0 20px;
 }
 
 /* Main
@@ -157,7 +158,7 @@ h2 {
   max-width: 1440px;
   height: 90px;
   /* background: var(--color-black); */
-  padding: 0 20px;
+  padding: 0;
   z-index: 100;
 }
 
@@ -192,7 +193,7 @@ h2 {
 
 .nav {
   position: absolute;
-  right: 123px;
+  right: 100px;
   top: 22%;
 }
 
@@ -241,7 +242,6 @@ h2 {
 .hero {
   display: flex;
   justify-content: start;
-  margin-top: 10px;
   width: 100%;
   max-width: 1440px;
   height: 910px;
@@ -304,11 +304,11 @@ h2 {
   line-height: 2;
   color: var(--color-gold);
   border: #bdae82 solid 2px;
-  transition:  color .3s linear;
+  transition: color .3s linear;
   margin-bottom: 10px;
 }
 
-.btn__portfolio.active{
+.btn__portfolio.active {
   background: var(--color-gold);
   color: var(--color-black);
 }
@@ -338,6 +338,11 @@ h2 {
 
 /* Section
 ==================== */
+.section {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
 .section__title {
   width: 100%;
   max-width: 700px;
@@ -407,7 +412,7 @@ h2 {
 }
 
 
-.sckills__items {
+.skills__cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -616,18 +621,17 @@ h2 {
   margin-bottom: 30px;
 }
 
-
-
 .form__group input {
   color: var(--color-gold);
   font-size: var(--font2);
   width: 100%;
   height: 50px;
   background: rgba(0, 0, 0, 0.5);
-  border: #bdae82 solid 2px;
+  border: #bdae82 solid 1.5px;
   margin-bottom: 20px;
   padding-left: 5px;
 }
+
 
 .form__group textarea {
   resize: none;
@@ -635,19 +639,27 @@ h2 {
   font-size: var(--font2);
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  border: #bdae82 solid 2px;
+  border: #bdae82 solid 1.5px;
   height: 100px;
   margin-bottom: 12px;
   padding-left: 5px;
 }
 
+.form__group input:focus,
+.form__group textarea:focus {
+  border: #bdae82 solid 2.5px;
+  border-radius: 7px;
+  color: var(--color-white);
+}
+
 ::placeholder {
   font-family: 'Inter', sans-serif;
-  color: #bdae82;
+  color: inherit;
   font-size: var(--font2);
   line-height: 2;
   padding: 2px 0 0 13px;
 }
+
 
 /* Footer
 ================ */
@@ -659,7 +671,7 @@ h2 {
   width: 100%;
   height: 150px;
   max-width: 1440px;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .footer a {
