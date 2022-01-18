@@ -242,7 +242,6 @@ h2 {
 .hero {
   display: flex;
   justify-content: start;
-  margin-top: 10px;
   width: 100%;
   max-width: 1440px;
   height: 910px;
