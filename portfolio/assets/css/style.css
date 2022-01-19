@@ -753,6 +753,12 @@ h2 {
 
 
 @media (max-width: 1240px) {
+
+
+  .hero {
+    height: 80vh;
+  }
+
   /* Skills */
   .skills__cards {
     display: flex;
@@ -784,14 +790,50 @@ h2 {
 
   /* Video */
   .video__player {
-    height: 400px;
+    height: 500px;
   }
-/* Price */
+
+  /* Price */
   .price__cards {
     width: 80%;
   }
 
   .price__item {
     width: 32%;
-  }}
+  }
+}
 
+@media (max-width:768px) {
+  :root {
+    --font1: 32px;
+    --font3: 28px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  /* Section */
+  .section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section__title {
+    width: 354px;
+
+    margin-bottom: 45px;
+  }
+
+  /* Header */
+  .header {
+    width: 100%;
+    padding: 0 60px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+}
