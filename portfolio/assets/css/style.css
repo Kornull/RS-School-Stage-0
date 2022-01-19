@@ -894,4 +894,29 @@ h2 {
     margin-bottom: 76px;
   }
 
+  /* Portfolio */
+  .portfolio {
+    margin-bottom: 55px;
+  }
+
+  .portfolio__title {
+    font-size: var(--font1);
+    width: 180px;
+    margin-bottom: 50px;
+  }
+
+  .porfolio__buttons {
+    margin-bottom: 55px;
+  }
+
+  .btn__portfolio {
+    margin-bottom: 5px;
+  }
+
+  .works__image {
+    width: 450px;
+    max-width: 450px;
+    margin-bottom: 25px;
+  }
+
 }
