@@ -955,4 +955,24 @@ h2 {
     width: 420px;
     margin-bottom: 52px;
   }
+  /* Contact */
+  .contacts {
+    height: 600px;
+    margin-bottom: 15px;
+
+  }
+
+  .contacts__form--content {
+    text-align: center;
+    top: 53px;
+    right: 157px;
+    width: 100%;
+    max-width: 450px;
+  }
+  .contact__title{
+    text-align: center;
+    font-size:  var(--font1);
+    font-weight: 700;
+
+  }
 }
