@@ -748,6 +748,12 @@ h2 {
   .skills__item {
     width: auto;
   }
+  .price__cards {
+    width: 98%;
+  }
+  .price__item {
+    width: 390px;
+  }
 }
 
 
@@ -798,7 +804,7 @@ h2 {
   }
 
   .price__item {
-    width: 32%;
+    width: 236px;
   }
 }
 
