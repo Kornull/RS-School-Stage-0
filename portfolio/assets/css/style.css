@@ -973,6 +973,17 @@ h2 {
     text-align: center;
     font-size:  var(--font1);
     font-weight: 700;
-
+  }
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__data {
+    margin-bottom: -20px;
+  }
+  .footer__text {
+    line-height: 1.2;
+    text-align:left;
   }
 }
