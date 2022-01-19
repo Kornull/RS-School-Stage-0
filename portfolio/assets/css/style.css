@@ -599,7 +599,6 @@ h2 {
   width: 100%;
   max-width: 1440px;
   height: 700px;
-  min-height: 600px;
   background: #000 url('../img/bg/contacts.jpg') center center/cover no-repeat;
   position: relative;
 }
@@ -955,6 +954,7 @@ h2 {
     width: 420px;
     margin-bottom: 52px;
   }
+
   /* Contact */
   .contacts {
     height: 600px;
@@ -969,21 +969,130 @@ h2 {
     width: 100%;
     max-width: 450px;
   }
-  .contact__title{
+
+  .contact__title {
     text-align: center;
-    font-size:  var(--font1);
+    font-size: var(--font1);
     font-weight: 700;
   }
+
   /* Footer */
   .footer {
     flex-direction: column;
     align-items: center;
   }
+
   .footer__data {
     margin-bottom: -20px;
   }
+
   .footer__text {
     line-height: 1.2;
-    text-align:left;
+    text-align: left;
+  }
+}
+
+@media (max-width:600px) {
+  .section__title {
+    width: 260px;
+    margin-bottom: 35px;
+  }
+
+  .hero {
+    height: 465px;
+    background-position: -300px 0;
+    margin-bottom: 60px;
+  }
+
+  .hero__item {
+    width: auto;
+    top: 122px;
+    left: 10px;
+  }
+
+  .hero__subscribe {
+    width: 275px;
+
+  }
+ .skills {
+   margin-bottom: 5px;
+ }
+  .skills__cards {
+    width: 310px;
+  }
+
+  .skills__description {
+    margin-bottom: 45px;
+  }
+
+  .porfolio__buttons {
+    margin-bottom: 35px;
+  }
+
+  .btn__portfolio {
+    margin-bottom: 10px;
+  }
+
+  .portfolio {
+    margin-bottom: 15px;
+  }
+
+  .porfolio__buttons {
+    width: 220px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
+
+  .portfolio__works {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .works__image {
+    width: 290px;
+    max-width: 430px;
+    margin-bottom: 15px;
+  }
+
+  .video {
+    margin-bottom: 20px;
+  }
+
+  .video__player {
+    width: 100%;
+    height: 210px;
+    background-position: -110px -121px;
+    background-size: auto 418px;
+  }
+
+  .price__cards {
+    max-width: 310px;
+    margin: 0 auto;
+  }
+
+  .price__item {
+    width: 100%;
+    max-width: 310px;
+    margin-bottom: 25px;
+  }
+
+  .price__description {
+    width: auto;
+  }
+  .contacts{
+  height: 450px;}
+
+  .contacts__form--content {
+    text-align: center;
+    width: 86%;
+    max-width: 450px;
+    top: -20px;
+    right: 20px;
+
+  }
+
+  .form {
+    margin: 0 auto;
+    width: 220px;
   }
 }
