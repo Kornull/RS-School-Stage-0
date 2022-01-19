@@ -836,4 +836,28 @@ h2 {
     display: none;
   }
 
+  /* Hero */
+  .hero {
+    width: 100%;
+    height: 590px;
+    background-position: -5px -30px;
+    background-size: auto 620px;
+    margin-bottom: 80px;
+  }
+
+  .hero__item {
+    top: 168px;
+    left: 60px;
+  }
+
+  .hero__title {
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .hero__subscribe {
+    width: 420px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
 }
