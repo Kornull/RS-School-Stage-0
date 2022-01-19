@@ -936,4 +936,23 @@ h2 {
     transform: scale(.5) translate(74px, 86px);
   }
 
+  /* Price */
+  .title--price {
+    width: 125px;
+    margin-bottom: 50px;
+  }
+
+  .price {
+    margin-bottom: 28px;
+  }
+
+  .price__cards {
+    width: 420px;
+    margin: 0 auto;
+  }
+
+  .price__item {
+    width: 420px;
+    margin-bottom: 52px;
+  }
 }
