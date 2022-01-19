@@ -860,4 +860,38 @@ h2 {
     line-height: 1.2;
     margin-bottom: 12px;
   }
+
+  /* Skills */
+  .skills {
+    width: 100%;
+    margin-bottom: 85px;
+  }
+
+  .skills__title {
+    font-size: var(--font1);
+    width: 135px;
+  }
+
+  .skills__cards {
+    width: 685px;
+    margin: 0 auto;
+  }
+
+  .skills__item {
+    width: 300px;
+  }
+
+  .skills__img {
+    margin-bottom: 30px;
+  }
+
+  .skills__name {
+    margin-bottom: 21px;
+  }
+
+  .skills__description {
+    line-height: 1.2;
+    margin-bottom: 76px;
+  }
+
 }
