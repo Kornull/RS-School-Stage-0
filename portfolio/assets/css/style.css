@@ -748,9 +748,11 @@ h2 {
   .skills__item {
     width: auto;
   }
+
   .price__cards {
     width: 98%;
   }
+
   .price__item {
     width: 390px;
   }
@@ -998,6 +1000,18 @@ h2 {
   }
 }
 
+@media (max-width:700px) {
+  .skills__cards {
+    width: 310px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills__item {
+    margin: 0;
+  }
+}
+
 @media (max-width:600px) {
   .section__title {
     width: 260px;
@@ -1020,9 +1034,11 @@ h2 {
     width: 275px;
 
   }
- .skills {
-   margin-bottom: 5px;
- }
+
+  .skills {
+    margin-bottom: 5px;
+  }
+
   .skills__cards {
     width: 310px;
   }
@@ -1085,8 +1101,10 @@ h2 {
   .price__description {
     width: auto;
   }
-  .contacts{
-  height: 450px;}
+
+  .contacts {
+    height: 450px;
+  }
 
   .contacts__form--content {
     text-align: center;
