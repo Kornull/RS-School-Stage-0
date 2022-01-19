@@ -245,7 +245,6 @@ h2 {
   width: 100%;
   max-width: 1440px;
   height: 910px;
-  min-height: 590px;
   background: url('../img/bg/bg.jpg') center center/cover no-repeat;
   margin: -90px 0 90px;
   position: relative;
@@ -441,7 +440,7 @@ h2 {
   margin: 0 auto;
 }
 
-.slills__name {
+.skills__name {
   width: 100%;
   max-width: 200px;
   font-size: inherit;
@@ -450,7 +449,7 @@ h2 {
   margin-bottom: 21px;
 }
 
-.scills__description {
+.skills__description {
   width: 100%;
   max-width: 280px;
   font-size: 18px;
@@ -736,3 +735,63 @@ h2 {
   width: 32px;
   height: 32px;
 }
+
+/* Media */
+@media (max-width: 1376px) {
+
+  /* Hero */
+  .hero {
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* Skills */
+  .skills__item {
+    width: auto;
+  }
+}
+
+
+@media (max-width: 1240px) {
+  /* Skills */
+  .skills__cards {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .skills__item {
+    width: 50%;
+  }
+
+  .skills__description {
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio */
+  .porfolio__buttons {
+    width: 445px;
+  }
+
+  .portfolio__works {
+    justify-content: space-around;
+  }
+
+  .works__image {
+    width: 33%;
+    max-width: 400px;
+    margin-bottom: 5px;
+  }
+
+  /* Video */
+  .video__player {
+    height: 400px;
+  }
+/* Price */
+  .price__cards {
+    width: 80%;
+  }
+
+  .price__item {
+    width: 32%;
+  }}
+
