@@ -556,7 +556,8 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 450px;
+  width: 33%;
+  max-width: 450px;
   border: #bdae82 solid 3px;
   margin-bottom: 10px;
 }
@@ -580,7 +581,7 @@ h2 {
 
 .price__description {
 
-  width: 364px;
+  max-width: 364px;
   margin-bottom: 38px;
 }
 
@@ -741,30 +742,9 @@ h2 {
   /* Hero */
   .hero {
     width: 100%;
-    height: 100vh;
-  }
-
-  /* Skills */
-  .skills__item {
-    width: auto;
-  }
-
-  .price__cards {
-    width: 98%;
-  }
-
-  .price__item {
-    width: 390px;
-  }
-}
-
-
-@media (max-width: 1240px) {
-
-
-  .hero {
     height: 80vh;
   }
+
 
   /* Skills */
   .skills__cards {
@@ -773,16 +753,24 @@ h2 {
   }
 
   .skills__item {
-    width: 50%;
+    width: auto;
   }
 
   .skills__description {
     margin-bottom: 20px;
   }
 
-  /* Portfolio */
-  .porfolio__buttons {
-    width: 445px;
+  .portfolio__works {
+    justify-content: space-around;
+  }
+
+  .price__cards {
+    width: 98%;
+  }
+
+  .price__item {
+    margin: 0 auto 10px;
+    max-width: 457px;
   }
 
   .portfolio__works {
@@ -791,7 +779,7 @@ h2 {
 
   .works__image {
     width: 33%;
-    max-width: 400px;
+    max-width: 450px;
     margin-bottom: 5px;
   }
 
@@ -800,13 +788,32 @@ h2 {
     height: 500px;
   }
 
-  /* Price */
-  .price__cards {
-    width: 80%;
+}
+
+@media (max-width:1025px) {
+
+  /* hero */
+  .hero {
+    width: 100%;
+    height: 590px;
+    background-position: -5px -30px;
+    background-size: auto 620px;
+    margin-bottom: 80px;
   }
 
-  .price__item {
-    width: 236px;
+  .hero__item {
+    width: 500px;
+    height: 330px;
+    position: absolute;
+    top: 95px;
+    left: 80px;
+  }
+}
+
+
+@media (max-width:901px) {
+  .porfolio__buttons {
+    max-width: 445px;
   }
 }
 
@@ -860,6 +867,8 @@ h2 {
   .hero__title {
     margin-bottom: 20px;
     font-weight: 400;
+    font-family: 'Merriweather', serif;
+    font-size: var(--font1);
   }
 
   .hero__subscribe {
@@ -880,7 +889,8 @@ h2 {
   }
 
   .skills__cards {
-    width: 685px;
+    flex-wrap: wrap;
+    max-width: 685px;
     margin: 0 auto;
   }
 
@@ -922,7 +932,6 @@ h2 {
 
   .works__image {
     width: 450px;
-    max-width: 450px;
     margin-bottom: 25px;
   }
 
@@ -1000,17 +1009,6 @@ h2 {
   }
 }
 
-@media (max-width:700px) {
-  .skills__cards {
-    width: 310px;
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
-  }
-  .skills__item {
-    margin: 0;
-  }
-}
 
 @media (max-width:600px) {
   .section__title {
@@ -1071,9 +1069,8 @@ h2 {
   }
 
   .works__image {
-    width: 290px;
-    max-width: 430px;
-    margin-bottom: 15px;
+    margin: 0 7px 15px;
+    width: auto;
   }
 
   .video {
