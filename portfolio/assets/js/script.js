@@ -23,6 +23,13 @@ const closeMenu = (event) => {
   };
   // console.log(event);
 }
+window.addEventListener('resize', function () {
+  backgroundDark.classList.remove('black');
+  document.body.classList.remove('blocked');
+  burgerIcon.classList.remove('active');
+  navMenu.classList.remove('active');
+}, true);
+
 
 navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
