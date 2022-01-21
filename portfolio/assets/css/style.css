@@ -146,6 +146,10 @@ h2 {
   font-weight: 700;
 }
 
+body.blocked {
+  overflow: hidden;
+}
+
 /* Header
 =================*/
 
@@ -158,10 +162,16 @@ h2 {
   max-width: 1440px;
   height: 90px;
   /* background: var(--color-black); */
-  padding: 0;
-  z-index: 100;
+  z-index: 10;
 }
 
+.header__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
 .header__logo {
   width: 50px;
@@ -180,7 +190,7 @@ h2 {
 }
 
 .header__nav {
-  width: 500px;
+  max-width: 500px;
   align-items: flex-end;
 
 }
@@ -235,6 +245,27 @@ h2 {
 
 .sol {
   margin: 0 3px;
+}
+
+.header__buttons {
+
+  display: flex;
+  align-items: center;
+}
+
+/* Burger */
+.burger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  width: 50px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 5px;
+  z-index: 250;
 }
 
 /* Hero
@@ -842,12 +873,106 @@ h2 {
 
   /* Header */
   .header {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
     width: 100%;
     padding: 0 60px;
   }
 
-  .header__nav {
+  .header__button-lang.none {
     display: none;
+  }
+
+  .burger {
+    display: block;
+
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+  }
+
+  .burger::before {
+    top: 0;
+  }
+
+  .burger::after {
+    bottom: 0;
+  }
+
+  .burger span {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    top: 44%;
+    transition: backgroun 0.2s ease-in;
+  }
+
+  .burger.active {
+    height: 50px;
+  }
+
+  .burger.active span {
+    background: transparent;
+  }
+
+  .burger.active::before {
+    top: 47%;
+    transform: rotate(-45deg)translate(0px, -50%);
+  }
+
+  .burger.active::after {
+    position: absolute;
+    width: 50px;
+    bottom: 50%;
+    transform: rotate(45deg)translate(0px, 50%);
+  }
+
+  .header__nav {
+    display: block;
+  }
+
+  .nav {
+    background: #000 url('../img') center center/cover no-repeat;
+    position: fixed;
+    top: 0;
+    width: 620px;
+    right: -100%;
+    z-index: 20;
+    height: 100vh;
+    transition: right 0.5s ease-in;
+    padding: 136px 0 0 97px;
+    overflow: auto;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__item {
+    padding-bottom: 19px;
+  }
+
+  .nav__item a {
+    font-size: 35px;
+    line-height: 2;
+  }
+
+  .nav__item:last-child {
+    padding-bottom: 0;
   }
 
   /* Hero */
@@ -1009,11 +1134,21 @@ h2 {
   }
 }
 
+@media (max-width:620px) {
+  .nav {
+    width: 100%;
+  }
+
+}
 
 @media (max-width:600px) {
   .section__title {
     width: 260px;
     margin-bottom: 35px;
+  }
+
+  .header {
+    padding: 0 20px;
   }
 
   .hero {
@@ -1033,11 +1168,15 @@ h2 {
 
   }
 
-  .skills {
-    margin-bottom: 5px;
+  .nav {
+    padding: 101px 0 0 10px;
   }
 
-  .skills__cards {
+  .nav__item a {
+    font-size: 30px;
+  }
+
+  _ .skills__cards {
     width: 310px;
   }
 
