@@ -152,6 +152,18 @@ body.blocked {
 
 /* Header
 =================*/
+.backgroundDark {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: -25;
+  transition: background 0.7s ease-in;
+}
+
+
 
 .header {
   position: relative;
@@ -839,6 +851,11 @@ body.blocked {
     top: 95px;
     left: 80px;
   }
+
+  .backgroundDark {
+    background: transparent;
+    z-index: -25;
+  }
 }
 
 
@@ -857,7 +874,10 @@ body.blocked {
   .container {
     padding: 0;
   }
-
+  .backgroundDark.black {
+    z-index: 12;
+    background: rgba(0, 0, 0, 0.6);
+  }
   /* Section */
   .section {
     width: 100%;
@@ -1135,6 +1155,10 @@ body.blocked {
 }
 
 @media (max-width:620px) {
+  .backgroundDark.black {
+    z-index: -12;
+    background: transparent;
+  }
   .nav {
     width: 100%;
   }
