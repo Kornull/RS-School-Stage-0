@@ -160,7 +160,7 @@ body.blocked {
   left: 0;
   background: transparent;
   z-index: -25;
-  transition: background 0.7s ease-in;
+  transition: background 0.5s ease-in;
 }
 
 
@@ -968,7 +968,7 @@ body.blocked {
     right: -100%;
     z-index: 20;
     height: 100vh;
-    transition: right 0.5s ease-in;
+    transition: right 0.3s ease-in;
     padding: 136px 0 0 97px;
     overflow: auto;
   }
