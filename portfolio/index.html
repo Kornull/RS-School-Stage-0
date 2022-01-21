@@ -21,44 +21,47 @@
 
 <body>
   <div class="container">
-
+<div class="backgroundDark"></div>
     <!-- Header -->
     <header class="header">
-      <div class="header__logo">
-        <svg class="logo__svg">
-          <use xlink:href="./assets/img/logo/logo.svg#camera__logo">
-          </use>
-        </svg>
-      </div>
-
-      <div class="header__nav">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#skill">Skills</a>
-            </li>
-            <li class="nav__item">
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav__item">
-              <a href="#video">Video</a>
-            </li>
-            <li class="nav__item">
-              <a href="#price">Price</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact">Contacts</a>
-            </li>
-          </ul>
-        </nav>
-      </div> <!-- ./header__nav -->
-
-      <div class="header__button-lang">
-        <span class="en__lang">en</span>
-        <span class="sol">&sol;</span>
-        <span class="ru__lang">ru</span>
-      </div>
-    </header>
+        <div class="header__logo">
+          <svg class="logo__svg">
+            <use xlink:href="./assets/img/logo/logo.svg#camera__logo">
+            </use>
+          </svg>
+        </div>
+        <div class="header__nav">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#skill">Skills</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#video">Video</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#price">Price</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contact">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </div> <!-- ./header__nav -->
+        <div class="header__buttons">
+          <div class="header__button-lang">
+            <span class="en__lang">en</span>
+            <span class="sol">&sol;</span>
+            <span class="ru__lang">ru</span>
+          </div>
+          <div class="burger">
+            <span></span>
+          </div>
+        </div> <!-- /.header__buttons -->
+      </header>
 
     <!-- Hero -->
     <section class="section">
@@ -94,10 +97,10 @@
               <div class="skills__img">
                 <img class="skills__images" src="./assets/img/svg/camera.svg" alt="camera">
               </div>
-              <div class="slills__name">
+              <div class="skills__name">
                 Digital photography
               </div>
-              <div class="scills__description">
+              <div class="skills__description">
                 High-quality photos in the studio and on the nature
               </div>
             </div> <!-- ./skills__item -->
@@ -106,10 +109,10 @@
               <div class="skills__img">
                 <img class="skills__images" src="./assets/img/svg/video.svg" alt="video">
               </div>
-              <div class="slills__name">
+              <div class="skills__name">
                 Video shooting
               </div>
-              <div class="scills__description">
+              <div class="skills__description">
                 Capture your moments so that they always stay with you
               </div>
             </div> <!-- ./skills__item -->
@@ -118,10 +121,10 @@
               <div class="skills__img">
                 <img class="skills__images" src="./assets/img/svg/image.svg" alt="image">
               </div>
-              <div class="slills__name">
+              <div class="skills__name">
                 Retouch
               </div>
-              <div class="scills__description">
+              <div class="skills__description">
                 I strive to make photography surpass reality
               </div>
             </div> <!-- ./skills__item -->
@@ -130,10 +133,10 @@
               <div class="skills__img">
                 <img class="skills__images" src="./assets/img/svg/mic.svg" alt="mic">
               </div>
-              <div class="slills__name">
+              <div class="skills__name">
                 Audio
               </div>
-              <div class="scills__description">
+              <div class="skills__description">
                 Professional sounds recording for video, advertising, portfolio
               </div>
             </div> <!-- ./skills__item -->
@@ -197,7 +200,7 @@
       <section class="section" id="price">
         <div class="price">
           <div class="section__title section--price">
-            <h2 class="skills__title">Price</h2>
+            <h2 class="skills__title title--price">Price</h2>
           </div>
           <div class="price__cards">
 
@@ -228,7 +231,7 @@
               <button class="btn btn__price" type="button">Order shooting
               </button>
             </div> <!-- ./price__item -->
-            
+
             <div class="price__item">
               <div class="price__title">Gold</div>
               <div class="price__cost">1000 &dollar;</div>
