@@ -991,9 +991,9 @@ body.blocked {
     line-height: 2;
   }
 
-  .nav__item:last-child {
+  /* .nav__item:last-child {
     padding-bottom: 0;
-  }
+  } */
 
   /* Hero */
   .hero {
