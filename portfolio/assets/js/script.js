@@ -12,5 +12,17 @@ if (burgerIcon) {
     navMenu.classList.toggle('active');
   })
 }
+// Close burger
+const navLinks = document.querySelectorAll('.nav__link');
+const closeMenu = (event) => {
+  if (event.target.classList.contains('nav__link')) {
+    backgroundDark.classList.remove('black');
+    document.body.classList.remove('blocked');
+    burgerIcon.classList.remove('active');
+    navMenu.classList.remove('active');
+  };
+  // console.log(event);
+}
 
+navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
