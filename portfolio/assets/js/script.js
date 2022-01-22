@@ -1,5 +1,6 @@
 "use strict";
 // Burger
+const navLinks = document.querySelectorAll('.nav__link');
 const backgroundDark = document.querySelector('.backgroundDark')
 const burgerIcon = document.querySelector('.burger');
 const navMenu = document.querySelector('.nav');
@@ -12,8 +13,8 @@ if (burgerIcon) {
     navMenu.classList.toggle('active');
   })
 }
+
 // Close burger
-const navLinks = document.querySelectorAll('.nav__link');
 const closeMenu = (event) => {
   if (event.target.classList.contains('nav__link')) {
     backgroundDark.classList.remove('black');
@@ -23,6 +24,8 @@ const closeMenu = (event) => {
   };
   // console.log(event);
 }
+
+// Resize window & close menu
 window.addEventListener('resize', function () {
   backgroundDark.classList.remove('black');
   document.body.classList.remove('blocked');
