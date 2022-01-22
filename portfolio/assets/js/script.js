@@ -1,10 +1,9 @@
 "use strict";
 // Burger
 const navLinks = document.querySelectorAll('.nav__link');
-const backgroundDark = document.querySelector('.backgroundDark')
+const backgroundDark = document.querySelector('.background__dark')
 const burgerIcon = document.querySelector('.burger');
 const navMenu = document.querySelector('.nav');
-const backgroundColor = document.querySelector('.bacgroundBlack');
 if (burgerIcon) {
   burgerIcon.addEventListener('click', function () {
     backgroundDark.classList.toggle('black');
