@@ -152,7 +152,7 @@ body.blocked {
 
 /* Header
 =================*/
-.backgroundDark {
+.background__dark {
   position: fixed;
   width: 20%;
   height: 100%;
@@ -852,7 +852,7 @@ body.blocked {
     left: 80px;
   }
 
-  .backgroundDark {
+  .backgroundd__dark {
     background: transparent;
     z-index: -25;
   }
@@ -874,7 +874,7 @@ body.blocked {
   .container {
     padding: 0;
   }
-  .backgroundDark.black {
+  .background__dark.black {
     z-index: 12;
     background: rgba(0, 0, 0, 0.6);
   }
@@ -1155,7 +1155,7 @@ body.blocked {
 }
 
 @media (max-width:620px) {
-  .backgroundDark.black {
+  .background__dark.black {
     z-index: -12;
     background: transparent;
   }
