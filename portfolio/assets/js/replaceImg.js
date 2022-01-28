@@ -1,5 +1,6 @@
 const portfolioImage = document.querySelectorAll('.work__img');
 let btnn = document.querySelector('.btn__portfolio')
+// Change images
 function changeImage() {
   const portfolioBtns = document.querySelector('.porfolio__buttons');
   portfolioBtns.addEventListener('click', (event) => {
@@ -11,3 +12,15 @@ function changeImage() {
   })
 }
 changeImage()
+
+// Cache images
+const allSeasons = ['winter', 'spring', 'summer', 'autumn'];
+function preloadSummerImages() {
+  const img = new Image();
+  allSeasons.forEach(el =>{
+  for(let i = 1; i <= 6; i++) {
+    img.src = `./assets/img/imagesPortfolio/${el}/${i}.jpg`;}
+  // console.log(img.src)}
+  })
+}
+preloadSummerImages();
