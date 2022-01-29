@@ -79,12 +79,13 @@ const langButtons = document.querySelectorAll('.lang')
 const classes = document.querySelectorAll('[data-i18j]');
 export function getTranslate() {
   languagePortfolio.addEventListener('click', (event) => {
+    // Colors button
     languagePortfolio.addEventListener('click', (event) => {
       langButtons.forEach(cl => cl.classList.remove('active'))
-      // cl.classList.remove('active'));
-
       event.target.classList.add('active');
     });
+
+    // Translate
     if (event.target.classList.contains('ru__lang')) {
       classes.forEach((key) => {
         langButtons.forEach(cl => cl.classList.remove('active'));
@@ -99,7 +100,5 @@ export function getTranslate() {
     }
   })
 }
-
-
 
 // export default i18Obj;
