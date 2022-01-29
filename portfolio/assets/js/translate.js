@@ -1,5 +1,10 @@
 const i18Obj = {
   'en': {
+    'skills': 'Skills',
+    'portfolio': 'Portfolio',
+    'video': 'Video',
+    'price': 'Price',
+    'contacts': 'Contacts',
     'contacts': 'Contacts',
     'hero-title': 'Alexa Rise',
     'hero-text': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
@@ -36,6 +41,10 @@ const i18Obj = {
     'send-message': 'Send message'
   },
   'ru': {
+    'skills': 'Навыки',
+    'portfolio': 'Портфолио',
+    'video': 'Видео',
+    'price': 'Цены',
     'contacts': 'Контакты',
     'hero-title': 'Алекса Райс',
     'hero-text': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
