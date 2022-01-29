@@ -1182,7 +1182,7 @@ body.blocked {
   }
 
   .hero {
-    height: 465px;
+    height: 480px;
     background-position: -300px 0;
     margin-bottom: 60px;
   }
@@ -1195,6 +1195,7 @@ body.blocked {
 
   .hero__subscribe {
     width: 275px;
+    margin-bottom: 50px;
 
   }
 
@@ -1205,7 +1206,9 @@ body.blocked {
   .nav__item a {
     font-size: 30px;
   }
-
+.skills{
+  margin-bottom: 10px;
+}
   _ .skills__cards {
     width: 310px;
   }
@@ -1269,14 +1272,17 @@ body.blocked {
   }
 
   .contacts {
-    height: 450px;
+    height: 480px;
+  }
+  .contact__title {
+    line-height: 1.2;
   }
 
   .contacts__form--content {
     text-align: center;
     width: 86%;
     max-width: 450px;
-    top: -20px;
+    top: 20px;
     right: 20px;
 
   }
