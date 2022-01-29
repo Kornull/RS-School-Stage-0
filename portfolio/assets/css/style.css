@@ -242,12 +242,16 @@ body.blocked {
   color: var(--color-white)
 }
 
-.en__lang:hover,
-.ru__lang:hover {
+.en__lang,
+.ru__lang {
 
   cursor: pointer;
   color: var(--color-white);
   transition: color .2s linear;
+}
+
+.lang.active {
+  color: var(--color-gold);
 }
 
 .en__lang:hover,
@@ -464,7 +468,7 @@ body.blocked {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 15px;
   width: 100%;
   max-width: 330px;
@@ -873,10 +877,12 @@ body.blocked {
   .container {
     padding: 0;
   }
+
   .background__dark.black {
     z-index: 12;
     background: rgba(0, 0, 0, 0.6);
   }
+
   /* Section */
   .section {
     width: 100%;
@@ -1158,6 +1164,7 @@ body.blocked {
     z-index: -12;
     background: transparent;
   }
+
   .nav {
     width: 100%;
   }
