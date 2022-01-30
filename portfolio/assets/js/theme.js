@@ -1,24 +1,29 @@
 const allTitle = document.querySelectorAll('h2');
 const btnTheme = document.querySelector('.theme__button');
 const heroBg = document.querySelector('.hero')
+const bgDark = document.querySelector('.background__dark')
 const contactsBg = document.querySelector('.contacts')
 const nav = document.querySelector('nav')
-const navLin = document.querySelectorAll('a')
+const navLin = document.querySelectorAll('.nav__link')
+const logo = document.querySelector('.logo__svg')
+const logoLink = document.querySelectorAll('.icon')
+const myLink = document.querySelectorAll('.my__link')
 
 
 export function colorTheme() {
-   btnTheme.addEventListener('click',(event)=>{
+  btnTheme.addEventListener('click', (event) => {
+    document.body.classList.toggle('light__theme');
+    bgDark.classList.toggle('none')
+    heroBg.classList.toggle('light__theme');
+    contactsBg.classList.toggle('light__theme');
+    nav.classList.toggle('light__theme');
+    logo.classList.toggle('black--svg')
+    allTitle.forEach(el => el.classList.toggle('light__theme')
+    )
+    navLin.forEach(el => el.classList.toggle('light__theme'))
+    logoLink.forEach(el => el.classList.toggle('black--svg'))
+    console.log(myLink)
+    myLink.forEach(el=> el.classList.toggle('black--text'))
 
-     document.body.classList.toggle('light__theme');
-     heroBg.classList.toggle('light__theme');
-     contactsBg.classList.toggle('light__theme');
-     nav.classList.toggle('light__theme');
-     console.log(navLin)
-     allTitle.forEach(el=>{
-      el.classList.toggle('light__theme')
-     })
-    navLin.forEach(el=>{
-      el.classList.toggle('light__theme')
-    })
-    })
+  })
 }
