@@ -8,6 +8,7 @@ const navLin = document.querySelectorAll('.nav__link')
 const logo = document.querySelector('.logo__svg')
 const logoLink = document.querySelectorAll('.icon')
 const myLink = document.querySelectorAll('.my__link')
+const burger = document.querySelector('.burger')
 
 
 export function colorTheme() {
@@ -18,6 +19,7 @@ export function colorTheme() {
     contactsBg.classList.toggle('light__theme');
     nav.classList.toggle('light__theme');
     logo.classList.toggle('black--svg')
+    burger.classList.toggle('bg--black')
     allTitle.forEach(el => el.classList.toggle('light__theme')
     )
     navLin.forEach(el => el.classList.toggle('light__theme'))

@@ -978,7 +978,11 @@ a.light__theme{
     top: 44%;
     transition: backgroun 0.2s ease-in;
   }
-
+  .burger.bg--black::after,
+  .burger.bg--black::before,
+  .burger.bg--black span {
+    background: #000;
+  }
   .burger.active {
     height: 50px;
   }
