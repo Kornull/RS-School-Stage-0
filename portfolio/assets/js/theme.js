@@ -15,7 +15,8 @@ const burger = document.querySelector('.burger');
 const btn = document.querySelectorAll('.btn-bg');
 const btnPortfolio = document.querySelectorAll('.btn__portfolio')
 const btnPrice = document.querySelectorAll('.btn__price')
-
+const input = document.querySelectorAll('input')
+const inputTextarea = document.querySelector('textarea')
 
 
 const arr = [heroBg, nav, heroBth, contactsBg]
@@ -26,6 +27,7 @@ export function colorTheme() {
     logo.classList.toggle('black--svg');
     burger.classList.toggle('bg--black');
     btnTheme.classList.toggle('active')
+    inputTextarea.classList.toggle('input--bg')
 
 
 
@@ -40,6 +42,7 @@ export function colorTheme() {
     navLin.forEach(el => el.classList.toggle('light'));
     logoLink.forEach(el => el.classList.toggle('black--svg'));
     myLink.forEach(el => el.classList.toggle('black--text'));
-
+    console.log(input)
+    input.forEach(el=>el.classList.toggle('input--bg'))
   })
 }
