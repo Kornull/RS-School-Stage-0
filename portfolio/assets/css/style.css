@@ -233,13 +233,17 @@ body.blocked {
   margin-left: 30px;
 }
 
-.nav__item a {
+.nav__item  {
   font-size: inherit;
   line-height: 2.5;
-  color: var(--color-white);
   transition: color .3s linear;
 }
-
+a{
+  color: var(--color-white);
+}
+a.light__theme{
+  color: var(--color-black);
+}
 .nav__item a:hover {
   color: var(--color-gold);
 }
@@ -1171,7 +1175,9 @@ body.blocked {
     font-size: var(--font1);
     font-weight: 700;
   }
-
+  .contact__title.light__theme{
+    background: none;
+  }
   /* Footer */
   .footer {
     flex-direction: column;
