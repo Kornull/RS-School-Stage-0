@@ -1053,7 +1053,11 @@ a.light__theme{
     background-size: auto 620px;
     margin-bottom: 80px;
   }
-
+  .hero.light__theme{ width: 100%;
+    height: 590px;
+    background-position: -5px -30px;
+    background-size: auto 620px;
+    margin-bottom: 80px;}
   .hero__item {
     top: 168px;
     left: 60px;
@@ -1233,7 +1237,11 @@ a.light__theme{
     background-position: -300px 0;
     margin-bottom: 60px;
   }
-
+ .hero.light__theme{
+  height: 480px;
+  background-position: -300px 0;
+  margin-bottom: 60px;
+ }
   .hero__item {
     width: auto;
     top: 122px;
