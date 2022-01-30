@@ -45,7 +45,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Inter', sans-serif;
-  color: var(--color-white);
+
   line-height: 2.5;
   font-size: var(--font2);
   font-weight: 400;
@@ -53,9 +53,12 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  background: var(--color-black);
-}
 
+}
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+}
 *,
 *:before,
 *:after {
@@ -144,8 +147,15 @@ html {
 h2 {
   font-family: 'Merriweather', serif;
   font-weight: 700;
+  color: var(--color-gold);
 }
-
+h2.light__theme{
+  color: var(--color-black);
+}
+body.light__theme {
+  background: var(--color-white);
+  color:var(--color-black)
+}
 body.blocked {
   overflow: hidden;
 }
@@ -215,7 +225,7 @@ body.blocked {
 
 .nav {
   position: absolute;
-  right: 100px;
+  right: 160px;
   top: 22%;
 }
 
@@ -235,7 +245,7 @@ body.blocked {
 }
 
 .header__button-lang {
-  margin-left: 30px;
+  margin-right: 20px;
   font-size: inherit;
   line-height: 2.5;
   font-weight: 700;
@@ -269,6 +279,12 @@ body.blocked {
   align-items: center;
 }
 
+/* Theme button */
+.theme__button {
+  width: 50px;
+  cursor: pointer;
+
+}
 /* Burger */
 .burger {
   position: fixed;
@@ -296,7 +312,9 @@ body.blocked {
   margin: -90px 0 90px;
   position: relative;
 }
-
+.hero.light__theme {
+  background: #000 url('../img/bg/bg-light.jpg') center center/cover no-repeat;
+}
 .hero__item {
   width: 500px;
   height: 330px;
@@ -335,7 +353,9 @@ body.blocked {
   text-align: center;
   color: var(--color-black);
   font-size: inherit;
-  transition: color 0.3s linear;
+  transition: color 0.3s linear,
+  transform 0.5s linear;
+
 
 }
 
@@ -352,6 +372,7 @@ body.blocked {
   border: #bdae82 solid 2px;
   transition: color .3s linear;
   margin-bottom: 10px;
+  transition:transform 0.5s linear;
 }
 
 .btn__portfolio.active {
@@ -375,9 +396,14 @@ body.blocked {
   font-weight: 400;
   line-height: 2;
   margin-bottom: 40px;
-  transition: color .3s linear;
+  transition: color .3s linear,
+  transform 0.5s linear;
 }
-
+.raise:hover,
+.raise:focus{
+	box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+	transform: translatey(-0.3em);
+}
 .btn:hover {
   color: var(--color-white);
 }
@@ -396,7 +422,6 @@ body.blocked {
   margin: 0 auto;
   margin-bottom: 50px;
   text-align: center;
-  background: #000;
 }
 
 .section__title::after {
@@ -448,15 +473,16 @@ body.blocked {
   display: block;
   width: 150px;
   overflow: hidden;
-  background: var(--color-black);
   font-size: var(--font3);
-  color: var(--color-gold);
+  background: var(--color-black);
   margin: 0 auto;
   position: relative;
   z-index: 2;
   overflow: hidden;
 }
-
+.skills__title.light__theme {
+  background: var(--color-white);
+}
 
 .skills__cards {
   display: flex;
@@ -515,9 +541,7 @@ body.blocked {
   display: block;
   width: 220px;
   overflow: hidden;
-  background: var(--color-black);
   font-size: var(--font3);
-  color: var(--color-gold);
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -650,6 +674,9 @@ body.blocked {
   background: #000 url('../img/bg/contacts.jpg') center center/cover no-repeat;
   position: relative;
 }
+.contacts.light__theme{
+  background: #000 url('../img/bg/contacts-light.jpg') center center/cover no-repeat;
+}
 
 .contacts__form--content {
   position: absolute;
@@ -662,7 +689,6 @@ body.blocked {
 
 .contact__title {
   font-family: 'Merriweather', serif;
-  color: var(--color-gold);
   font-size: var(--font3);
   margin-bottom: 30px;
 }
@@ -977,7 +1003,10 @@ body.blocked {
     padding: 136px 0 0 97px;
     overflow: auto;
   }
-
+  .light__theme{
+    background: var(--color-white);
+    color: var(--color-black);
+  }
   .nav.active {
     right: 0;
   }
