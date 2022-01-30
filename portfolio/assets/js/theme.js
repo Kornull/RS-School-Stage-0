@@ -4,6 +4,7 @@ const heroBth = document.querySelector('.header__button-lang')
 const heroBthLang = document.querySelectorAll('.lang')
 const heroBg = document.querySelector('.hero')
 const bgDark = document.querySelector('.background__dark')
+const sectBefAft = document.querySelectorAll('.section__title')
 const contactsBg = document.querySelector('.contacts')
 const nav = document.querySelector('nav')
 const navLin = document.querySelectorAll('.nav__link')
@@ -21,6 +22,8 @@ export function colorTheme() {
     logo.classList.toggle('black--svg')
     burger.classList.toggle('bg--black')
 
+
+    sectBefAft.forEach(el=> el.classList.toggle('bg--black'))
     arr.forEach(el => el.classList.toggle('light__theme'))
     allTitle.forEach(el => el.classList.toggle('light__theme')
     )

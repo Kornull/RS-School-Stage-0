@@ -439,7 +439,6 @@ a.light__theme{
   width: 100%;
   max-width: 274px;
   height: 2px;
-  background: var(--color-gold);
   position: absolute;
   top: 48%;
   left: 0;
@@ -452,13 +451,19 @@ a.light__theme{
   width: 100%;
   max-width: 274px;
   height: 2px;
-  background: var(--color-gold);
   position: absolute;
   top: 48%;
   right: 0;
   z-index: 0;
 }
-
+.section__title::after,
+.section__title::before{
+  background: var(--color-gold);
+}
+.section__title.bg--black::after,
+.section__title.bg--black::before{
+  background: var(--color-black);
+}
 .section--portfolio::after,
 .section--portfolio::before {
   max-width: 235px;
