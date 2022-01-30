@@ -1,6 +1,7 @@
 "use strict";
 
 import * as translate from './translate.js';
+import * as theme from './theme.js'
 // Burger
 const navLinks = document.querySelectorAll('.nav__link');
 const backgroundDark = document.querySelector('.background__dark')
@@ -38,3 +39,4 @@ window.addEventListener('resize', function () {
 navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
 translate.getTranslate()
+theme.colorTheme();

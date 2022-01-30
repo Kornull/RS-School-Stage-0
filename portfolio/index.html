@@ -19,7 +19,7 @@
   <title>Portfolio</title>
 </head>
 
-<body>
+<body class="">
   <div class="container">
     <div class="background__dark"></div>
     <!-- Header -->
@@ -34,24 +34,19 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="#skill"
-              data-i18j="skills">Skills</a>
+              <a class="nav__link" href="#skill" data-i18j="skills">Skills</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#portfolio"
-              data-i18j="portfolio">Portfolio</a>
+              <a class="nav__link" href="#portfolio" data-i18j="portfolio">Portfolio</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#video"
-              data-i18j="video">Video</a>
+              <a class="nav__link" href="#video" data-i18j="video">Video</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#price"
-              data-i18j="price">Price</a>
+              <a class="nav__link" href="#price" data-i18j="price">Price</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#contact"
-              data-i18j="contacts">Contacts</a>
+              <a class="nav__link" href="#contact" data-i18j="contacts">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -61,6 +56,10 @@
           <span class="lang en__lang">en</span>
           <span class="sol">&sol;</span>
           <span class="lang ru__lang">ru</span>
+        </div>
+        <div class="theme__button">
+          <img src="" alt="">
+          <!-- <img class="theme__img"src="./assets/img/svgColorTheme/carbon_sun.svg" alt=""> -->
         </div>
         <div class="burger">
           <span></span>
@@ -81,7 +80,7 @@
               professional
               photographer Alexa Rise</p>
           </div>
-          <button class="btn" type="button" data-i18j="hire">
+          <button class="btn btn-bg raise" type="button" data-i18j="hire">
             Hire me
           </button>
         </div>
@@ -154,13 +153,17 @@
       <section class="section" id="portfolio">
         <div class="portfolio">
           <div class="section__title section--portfolio">
-            <h2 class="portfolio__title">Portfolio</h2>
+            <h2 class="portfolio__title skills__title">Portfolio</h2>
           </div>
           <div class="porfolio__buttons">
-            <button class="btn btn__portfolio" type="button" data-season="winter"data-i18j="winter">Winter</button>
-            <button class="btn btn__portfolio" type="button" data-season="spring"data-i18j="spring">Spring</button>
-            <button class="btn btn__portfolio" type="button" data-season="summer"data-i18j="summer">Summer</button>
-            <button class="btn btn__portfolio" type="button" data-season="autumn"data-i18j="autumn">Autumn</button>
+            <button class="btn btn--l btn__portfolio raise" type="button" data-season="winter"
+              data-i18j="winter">Winter</button>
+            <button class="btn btn--r btn__portfolio raise" type="button" data-season="spring"
+              data-i18j="spring">Spring</button>
+            <button class="btn btn--l btn__portfolio raise" type="button" data-season="summer"
+              data-i18j="summer">Summer</button>
+            <button class="btn btn--r btn__portfolio raise" type="button" data-season="autumn"
+              data-i18j="autumn">Autumn</button>
           </div>
 
           <div class="portfolio__works works">
@@ -214,17 +217,13 @@
               <div class="price__title">Standard</div>
               <div class="price__cost">500 &dollar;</div>
               <div class="price__description">
-                <span
-                data-i18j="price-description-1-span-1">One location</span>
+                <span data-i18j="price-description-1-span-1">One location</span>
                 <span data-i18j="price-description-1-span-2">120 photos in color</span>
-                <span
-                data-i18j="price-description-1-span-3">12 photos in retouch</span>
-                <span
-                data-i18j="price-description-1-span-4">Readiness 2-3 weeks</span>
-                <span
-                data-i18j="price-description-1-span-5">Make up, visage</span>
+                <span data-i18j="price-description-1-span-3">12 photos in retouch</span>
+                <span data-i18j="price-description-1-span-4">Readiness 2-3 weeks</span>
+                <span data-i18j="price-description-1-span-5">Make up, visage</span>
               </div>
-              <button class="btn btn__price" type="button" data-i18j="order">Order shooting
+              <button class="btn btn__price raise" type="button" data-i18j="order">Order shooting
               </button>
             </div> <!-- ./price__item -->
 
@@ -232,18 +231,13 @@
               <div class="price__title">Premium</div>
               <div class="price__cost">700 &dollar;</div>
               <div class="price__description">
-                <span
-                data-i18j="price-description-2-span-1">One or two locations</span>
-                <span
-                data-i18j="price-description-2-span-2">200 photos in color</span>
-                <span
-                data-i18j="price-description-2-span-3">20 photos in retouch</span>
-                <span
-                data-i18j="price-description-2-span-4">Readiness 1-2 weeks</span>
-                <span
-                data-i18j="price-description-2-span-5">Make up, visage</span>
+                <span data-i18j="price-description-2-span-1">One or two locations</span>
+                <span data-i18j="price-description-2-span-2">200 photos in color</span>
+                <span data-i18j="price-description-2-span-3">20 photos in retouch</span>
+                <span data-i18j="price-description-2-span-4">Readiness 1-2 weeks</span>
+                <span data-i18j="price-description-2-span-5">Make up, visage</span>
               </div>
-              <button class="btn btn__price" type="button" data-i18j="order">Order shooting
+              <button class="btn btn--r btn__price raise" type="button" data-i18j="order">Order shooting
               </button>
             </div> <!-- ./price__item -->
 
@@ -251,18 +245,13 @@
               <div class="price__title">Gold</div>
               <div class="price__cost">1000 &dollar;</div>
               <div class="price__description">
-                <span
-                data-i18j="price-description-3-span-1">Three locations or more</span>
-                <span
-                data-i18j="price-description-3-span-2">300 photos in color</span>
-                <span
-                data-i18j="price-description-3-span-3">50 photos in retouch</span>
-                <span
-                data-i18j="price-description-3-span-4">Readiness 1 week</span>
-                <span
-                data-i18j="price-description-3-span-5">Make up, visage, hairstyle</span>
+                <span data-i18j="price-description-3-span-1">Three locations or more</span>
+                <span data-i18j="price-description-3-span-2">300 photos in color</span>
+                <span data-i18j="price-description-3-span-3">50 photos in retouch</span>
+                <span data-i18j="price-description-3-span-4">Readiness 1 week</span>
+                <span data-i18j="price-description-3-span-5">Make up, visage, hairstyle</span>
               </div>
-              <button class="btn btn__price" type="button" data-i18j="order">Order shooting
+              <button class="btn btn__price raise" type="button" data-i18j="order">Order shooting
               </button>
             </div> <!-- ./price__item -->
           </div> <!-- ./price__cards -->
@@ -277,7 +266,7 @@
           <h2 class="contact__title" data-i18j="contact-me">Contact me</h2>
           <form class="form" action="/" method="post">
             <div class="form__group">
-              <input type="email" placeholder="E-mail">
+              <input class="" type="email" placeholder="E-mail">
             </div>
             <div class="form__group">
               <input type="tel" placeholder="Phone">
@@ -285,7 +274,7 @@
             <div class="form__group">
               <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
             </div>
-            <button class="btn" type="button" data-i18j="send-message">
+            <button class="btn btn-bg btn--r raise" type="button" data-i18j="send-message">
               Send message
             </button>
           </form>
@@ -296,11 +285,11 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer__data">&copy; <span>2022</span>
-        <span><a href="https://github.com/Kornull" target="_blank">github</a></span>
+        <span><a class="my__link" href="https://github.com/Kornull" target="_blank">github</a></span>
       </div>
 
       <div class="footer__text">
-        <a href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a>
+        <a class="my__link" href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a>
       </div>
 
       <div class="footer__social">
