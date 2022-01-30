@@ -256,19 +256,23 @@ a.light__theme{
   font-weight: 700;
   color: var(--color-white)
 }
-
+.header__button-lang.light__theme{
+  color:var(--color-black);
+  background: none;
+}
 .en__lang,
 .ru__lang {
 
   cursor: pointer;
-  color: var(--color-white);
   transition: color .2s linear;
 }
 
 .lang.active {
   color: var(--color-gold);
 }
-
+.lang.black--text.active {
+  color: var(--color-white);
+}
 .en__lang:hover,
 .ru__lang:hover {
   color: var(--color-gold);
@@ -778,7 +782,7 @@ a.light__theme{
   color: var(--color-white);
   transition: color .3s linear;
 }
-.my__link.black--text {
+.black--text {
   color: var(--color-black);
 }
 .my__link:hover {
