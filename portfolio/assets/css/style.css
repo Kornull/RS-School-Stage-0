@@ -746,7 +746,7 @@ a.light {
   margin-bottom: 30px;
 }
 
-.form__group input {
+ input {
   color: var(--color-gold);
   font-size: var(--font2);
   width: 100%;
@@ -758,7 +758,7 @@ a.light {
 }
 
 
-.form__group textarea {
+ textarea {
   resize: none;
   color: var(--color-gold);
   font-size: var(--font2);
@@ -769,7 +769,10 @@ a.light {
   margin-bottom: 12px;
   padding-left: 5px;
 }
-
+.input--bg {
+  background: rgba(180, 180, 180, 0.342);
+  color: var(--color-black);
+}
 .form__group input:focus,
 .form__group textarea:focus {
   border: var(--color-gold) solid 2.5px;
@@ -1195,7 +1198,14 @@ a.light {
     width: 450px;
     margin-bottom: 25px;
   }
-
+.btn--r.raise:focus,.raise:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+  transform: translatex(0.3em);
+}
+.btn--l.raise:focus,.raise:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+  transform: translatex(-0.3em);
+}
   /* Video */
   .video {
     margin-bottom: 85px;
