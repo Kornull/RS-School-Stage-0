@@ -39,7 +39,7 @@ window.addEventListener('resize', function () {
 
 navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
+translate.setLocalStorage();
+translate.getLocalStorage();
 translate.getTranslate();
 theme.colorTheme();
-local.setLocalStorage();
-local.getLocalStorage()
