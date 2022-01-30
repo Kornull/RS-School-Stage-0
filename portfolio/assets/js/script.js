@@ -2,7 +2,6 @@
 
 import * as translate from './translate.js';
 import * as theme from './theme.js'
-import * as local from './storage.js'
 // Burger
 const navLinks = document.querySelectorAll('.nav__link');
 const backgroundDark = document.querySelector('.background__dark')
