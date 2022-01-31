@@ -18,9 +18,58 @@ const btnPrice = document.querySelectorAll('.btn__price')
 const input = document.querySelectorAll('input')
 const inputTextarea = document.querySelector('textarea')
 
-
+let i = 0
 const arr = [heroBg, nav, heroBth, contactsBg]
-export function colorTheme() {
+export function colorTheme(theme) {
+  if(theme==='light'){
+    i = 0;
+    document.body.classList.add('light');
+    bgDark.classList.add('none');
+    logo.classList.add('black--svg');
+    burger.classList.add('bg--black');
+    btnTheme.classList.add('active')
+    inputTextarea.classList.add('input--bg')
+
+
+
+    btnPortfolio.forEach(el=>el.classList.add('gold'))
+    btnPrice.forEach(el=>el.classList.add('shadow'))
+    sectBefAft.forEach(el => el.classList.add('bg--black'));
+    arr.forEach(el => el.classList.add('light'));
+    allTitle.forEach(el => el.classList.add('light'));
+    btn.forEach(el => el.classList.add('light--btn')
+    );
+    heroBthLang.forEach(el => el.classList.add('black--text'));
+    navLin.forEach(el => el.classList.add('light'));
+    logoLink.forEach(el => el.classList.add('black--svg'));
+    myLink.forEach(el => el.classList.add('black--text'));
+    console.log(input)
+    input.forEach(el=>el.classList.add('input--bg'))
+  } if (theme==='dark') {
+    i = 1;
+    document.body.classList.remove('light');
+    bgDark.classList.remove('none');
+    logo.classList.remove('black--svg');
+    burger.classList.remove('bg--black');
+    btnTheme.classList.remove('active')
+    inputTextarea.classList.remove('input--bg')
+
+
+
+    btnPortfolio.forEach(el=>el.classList.remove('gold'))
+    btnPrice.forEach(el=>el.classList.remove('shadow'))
+    sectBefAft.forEach(el => el.classList.remove('bg--black'));
+    arr.forEach(el => el.classList.remove('light'));
+    allTitle.forEach(el => el.classList.remove('light'));
+    btn.forEach(el => el.classList.remove('light--btn')
+    );
+    heroBthLang.forEach(el => el.classList.remove('black--text'));
+    navLin.forEach(el => el.classList.remove('light'));
+    logoLink.forEach(el => el.classList.remove('black--svg'));
+    myLink.forEach(el => el.classList.remove('black--text'));
+    console.log(input)
+    input.forEach(el=>el.classList.remove('input--bg'))
+  }
   btnTheme.addEventListener('click', (event) => {
     document.body.classList.toggle('light');
     bgDark.classList.toggle('none');
@@ -46,3 +95,25 @@ export function colorTheme() {
     input.forEach(el=>el.classList.toggle('input--bg'))
   })
 }
+let theme = 'dark'
+export function setLocalStorage() {
+  btnTheme.addEventListener('click', (event) => {
+
+    if (i%2===0) {
+      theme = 'dark'
+    }if(i%2!==0){
+      theme = 'light';
+    }
+    console.log(i)
+    i++;
+    localStorage.setItem('theme', theme);
+  })
+}
+window.addEventListener('beforeunload', setLocalStorage)
+export function getLocalStorage() {
+  if(localStorage.getItem('theme')) {
+    const theme = localStorage.getItem('theme');
+    colorTheme(theme);
+  }
+}
+window.addEventListener('load', getLocalStorage)
