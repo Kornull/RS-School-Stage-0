@@ -42,3 +42,5 @@ translate.setLocalStorage();
 translate.getLocalStorage();
 translate.getTranslate();
 theme.colorTheme();
+theme.setLocalStorage();
+theme.getLocalStorage();

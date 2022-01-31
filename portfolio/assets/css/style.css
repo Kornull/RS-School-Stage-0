@@ -338,7 +338,7 @@ a.light {
 }
 
 .hero.light {
-  background: #000 url('../img/bg/bg-light.jpg') center center/cover no-repeat;
+  background: #fff url('../img/bg/bg-light.jpg') center center/cover no-repeat;
 }
 
 .hero__item {
