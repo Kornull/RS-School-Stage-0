@@ -43,7 +43,6 @@ export function colorTheme(theme) {
     navLin.forEach(el => el.classList.add('light'));
     logoLink.forEach(el => el.classList.add('black--svg'));
     myLink.forEach(el => el.classList.add('black--text'));
-    console.log(input)
     input.forEach(el=>el.classList.add('input--bg'))
   } if (theme==='dark') {
     i = 1;
@@ -67,7 +66,6 @@ export function colorTheme(theme) {
     navLin.forEach(el => el.classList.remove('light'));
     logoLink.forEach(el => el.classList.remove('black--svg'));
     myLink.forEach(el => el.classList.remove('black--text'));
-    console.log(input)
     input.forEach(el=>el.classList.remove('input--bg'))
   }
   btnTheme.addEventListener('click', (event) => {
@@ -91,7 +89,6 @@ export function colorTheme(theme) {
     navLin.forEach(el => el.classList.toggle('light'));
     logoLink.forEach(el => el.classList.toggle('black--svg'));
     myLink.forEach(el => el.classList.toggle('black--text'));
-    console.log(input)
     input.forEach(el=>el.classList.toggle('input--bg'))
   })
 }
@@ -104,7 +101,7 @@ export function setLocalStorage() {
     }if(i%2!==0){
       theme = 'light';
     }
-    console.log(i)
+    // console.log(i)
     i++;
     localStorage.setItem('theme', theme);
   })
