@@ -172,7 +172,7 @@ body.blocked {
   width: 20%;
   height: 100%;
   top: 0;
-  left: 0;
+  left: -100%;
   background: transparent;
   z-index: -25;
   transition: background 0.5s ease-in;
@@ -352,7 +352,7 @@ a.light {
 }
 
 .hero.light {
-  background: #fff url('../img/bg/bg-light.jpg') center center/cover no-repeat;
+  background: url('../img/bg/bg-light.jpg') center center/cover no-repeat;
 }
 
 .hero__item {
@@ -993,15 +993,18 @@ textarea.light {
   .container {
     padding: 0;
   }
-
+  .background__dark.light.black {
+    z-index: 12;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+  }
   .background__dark.black {
     z-index: 12;
+    left: 0;
     background: rgba(0, 0, 0, 0.6);
   }
 
-  .background__dark.light {
-    display: none;
-  }
+
 
   /* Section */
   .section {
