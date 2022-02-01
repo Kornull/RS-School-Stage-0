@@ -1,5 +1,10 @@
 const i18Obj = {
   'en': {
+    'skills': 'Skills',
+    'portfolio': 'Portfolio',
+    'video': 'Video',
+    'price': 'Price',
+    'contacts': 'Contacts',
     'contacts': 'Contacts',
     'hero-title': 'Alexa Rise',
     'hero-text': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
@@ -36,6 +41,10 @@ const i18Obj = {
     'send-message': 'Send message'
   },
   'ru': {
+    'skills': 'Навыки',
+    'portfolio': 'Портфолио',
+    'video': 'Видео',
+    'price': 'Цены',
     'contacts': 'Контакты',
     'hero-title': 'Алекса Райс',
     'hero-text': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
@@ -77,7 +86,17 @@ const languagePortfolio = document.querySelector('.header__button-lang');
 const langButtons = document.querySelectorAll('.lang')
 
 const classes = document.querySelectorAll('[data-i18j]');
-export function getTranslate() {
+export function getTranslate(lang) {
+  if (lang === 'ru'){
+    classes.forEach((key) => {
+      for (let i = 0; i < keys.length; i++) { key.textContent = `${i18Obj['ru'][key.dataset.i18j]}`; }
+    })
+  }
+  if (lang === 'en'){
+    classes.forEach((key) => {
+      for (let i = 0; i < keys.length; i++) { key.textContent = `${i18Obj['en'][key.dataset.i18j]}`; }
+    })
+  }
   languagePortfolio.addEventListener('click', (event) => {
     // Colors button
     languagePortfolio.addEventListener('click', (event) => {
@@ -100,5 +119,26 @@ export function getTranslate() {
     }
   })
 }
-
+let lang = 'en'
+let theme = 'dark'
+const langBtn = document.querySelector('.header__button-lang')
+export function setLocalStorage() {
+  langBtn.addEventListener('click', (event) => {
+    if (event.target.classList.contains('ru__lang')) {
+      lang = 'ru'
+    }
+    if (event.target.classList.contains('en__lang')) {
+      lang = 'en'
+    }
+    localStorage.setItem('lang', lang);
+  })
+}
+window.addEventListener('beforeunload', setLocalStorage)
+export function getLocalStorage() {
+  if(localStorage.getItem('lang')) {
+    const lang = localStorage.getItem('lang');
+    getTranslate(lang);
+  }
+}
+window.addEventListener('load', getLocalStorage)
 // export default i18Obj;
