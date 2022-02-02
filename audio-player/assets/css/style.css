@@ -133,15 +133,29 @@ p {
 }
 
 .btn__start--stop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  width: 80px;
+  width: 200px;
   height: 80px;
 }
-
+.btn__right,
+.btn__left {
+  width: 50px;
+  height: 50px;
+}
+.btn__left {
+  background: url('../btnSvg/left.svg') center center/cover no-repeat;
+}
+.btn__right {
+  background: url('../btnSvg/right.svg') center center/cover no-repeat;
+}
 .btn__play {
   width: 80px;
   height: 80px;
   background: none;
+
   background:url('../btnSvg/play.svg') center center/cover no-repeat;
 }
 
