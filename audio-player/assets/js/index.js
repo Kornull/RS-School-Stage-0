@@ -19,7 +19,7 @@ btnPlay.addEventListener('click', (ev) => {
     btnPlay.classList.add('play');
 
     playAudio();
-    i++;
+    i+=2;
   }
   else if (i % 2 === 0) {
     btnPlay.classList.remove('play');
@@ -32,7 +32,8 @@ btnNext.addEventListener('click', (ev) => {
   if (numTrack > music.length - 1) {
     numTrack = 0;
   }
-  i+=2;
+  btnPlay.classList.add('play');
+  i=2;
   console.log('i++',i)
   playAudio(music[numTrack]);
 })
@@ -42,7 +43,8 @@ btnPrev.addEventListener('click', (ev) => {
   if (numTrack < 0) {
     numTrack = music.length-1;
   }
-  i-=2;
+  btnPlay.classList.add('play');
+  i=2;
   if (i<0){i = 2}
   console.log('i--',i)
   playAudio(music[numTrack]);
