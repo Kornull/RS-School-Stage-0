@@ -7,7 +7,7 @@ let numtrack = 0
 const music = [
   '/audio-player/assets/audio/Bring Me The Horizon - Kingslayer.mp3',
   '/audio-player/assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
-   '/audio-player/assets/audio/Malia J - Smells Like Teen Spirit.mp3'
+   '/audio-player/assets/audio/Malia J - Smells Like Teen Spirit.mp3',
 ]
 let i = 1;
 const audio = new Audio();
@@ -36,9 +36,9 @@ btnPlay.addEventListener('click', (ev) => {
 })
 btnNext.addEventListener('click', (ev) => {
   numtrack++;
-  if (numtrack > music.length) {
+  if (numtrack > music.length - 1) {
     numtrack = 0;
-  } btnPlay.classList.add('play');
+  }
   i+=2;
   console.log('i++',i)
   playAudio(music[numtrack]);
@@ -47,10 +47,11 @@ btnNext.addEventListener('click', (ev) => {
 btnPrev.addEventListener('click', (ev) => {
   numtrack--;
   if (numtrack < 0) {
-    numtrack = music.length - 1;
+    numtrack = music.length-1;
   }
-  btnPlay.classList.add('play');
+
   i-=2;
+  if (i<0){i = 2}
   console.log('i--',i)
   playAudio(music[numtrack]);
 })
