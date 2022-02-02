@@ -5,10 +5,9 @@ const imgMusic = document.querySelector('.atrist__image')
 
 let numTrack = 0
 const music = [
-  '../assets/audio/Bring Me The Horizon - Kingslayer.mp3',
-  '../assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
-   '../audio/Malia J - Smells Like Teen Spirit.mp3',
-]
+  './assets/audio/Bring Me The Horizon - Kingslayer.mp3',
+  './assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
+'./assets/audio/Malia J - Smells Like Teen Spirit.mp3']
 let i = 1;
 const audio = new Audio();
 
@@ -55,7 +54,7 @@ function playAudio() {
   audio.src = music[numTrack];
   audio.currentTime = 0;
   audio.play();
-  imgMusic.src=`../assets/img/imgMusic/${numTrack}.jpg`
+  imgMusic.src=`./assets/img/imgMusic/${numTrack}.jpg`
 }
 function pauseAudio() {
   audio.pause();
