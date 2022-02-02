@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Custom audio-player</title>
+</head>
+
+<body>
+  <div class="container__bg--img">
+    <div class="container">
+      <section class="section">
+        <div class="audio__player">
+          <div class="section__title">
+            <h1 class="name__artist">name artists</h1>
+          </div>
+          <div class="section__subtitle">
+            <h2 class="song__title">song title</h2>
+          </div>
+          <div class="btn__start--stop" id="controls">
+            <button class="btn__left" type="button"></button>
+            <button class="btn__play" type="button"></button>
+            <button class="btn__right" type="button"></button>
+          </div> <!-- ./btn__start--stop -->
+          <div class="audio__img">
+            <img class="atrist__image" src="" alt="">
+          </div> <!-- ./audio__img -->
+
+          <div class="time__track">
+            <div class="progress"></div>
+          </div>
+          <div class="time">
+            <div class="current">0:00</div>
+            <div class="divider">&sol;</div>
+            <div class="length"></div>
+          </div>
+        </div> <!-- ./audio__player -->
+      </section>
+    </div><!-- ./container -->
+  </div> <!-- ./container__bg--img -->
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
