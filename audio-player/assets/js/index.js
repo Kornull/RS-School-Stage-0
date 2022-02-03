@@ -4,6 +4,11 @@ const btnNext = document.querySelector('.btn__right');
 const imgMusic = document.querySelector('.atrist__image')
 const nameArtist = document.querySelector('.name__artist')
 const songTitle = document.querySelector('.song__title')
+const lengthAudio = document.querySelector('.length')
+const timeTrack = document.querySelector('.time__track')
+const currentAudio = document.querySelector('.current')
+const progress = document.querySelector('.progress')
+
 
 let numTrack = 0
 const music = [
@@ -23,14 +28,10 @@ const titleSong = [
 
 let i = 1;
 const audio = new Audio();
-
-
-
-
+// Start/Stop player
 btnPlay.addEventListener('click', (ev) => {
   if (i % 2 !== 0) {
     btnPlay.classList.add('play');
-
     playAudio();
     i++;
   }
@@ -40,6 +41,8 @@ btnPlay.addEventListener('click', (ev) => {
     i = 1
   }
 })
+
+//  Run next track
 btnNext.addEventListener('click', (ev) => {
   numTrack++;
   if (numTrack > music.length - 1) {
@@ -47,10 +50,10 @@ btnNext.addEventListener('click', (ev) => {
   }
   btnPlay.classList.add('play');
   i = 2;
-  console.log('i++', i)
   playAudio(music[numTrack]);
 })
 
+// Run prev track
 btnPrev.addEventListener('click', (ev) => {
   numTrack--;
   if (numTrack < 0) {
@@ -58,11 +61,16 @@ btnPrev.addEventListener('click', (ev) => {
   }
   btnPlay.classList.add('play');
   i = 2;
-  if (i < 0) { i = 2 }
   console.log('i--', i)
   playAudio(music[numTrack]);
 })
 
+// All time track
+ audio.onloadedmetadata = function () {
+  let seconds = Math.floor(audio.duration % 60);
+  let minutes = Math.floor(audio.duration / 60);
+  lengthAudio.textContent = `${minutes}:${seconds}`
+};
 
 
 function playAudio() {
