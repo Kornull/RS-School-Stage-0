@@ -135,7 +135,9 @@ p {
   font-size: var(--font1);
   transition: color .3s ease;
 }
-
+.bird-item.play{
+  color: var(--color-gold);
+}
 .bird-item:hover {
   color: var(--color-gold);
 }
