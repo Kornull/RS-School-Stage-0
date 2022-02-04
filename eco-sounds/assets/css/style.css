@@ -150,6 +150,7 @@ p {
   width: 100%;
   height: calc(100vh - 120px) ;
   background: #000 url('../img/birdImg/forest.jpg') center center/cover no-repeat;
+  transition: background .5s linear;
 }
 /* Buttons */
 .btn__play--pause {
