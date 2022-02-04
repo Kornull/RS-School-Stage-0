@@ -3,11 +3,13 @@ const btnPlay = document.querySelector('.btn__play--pause');
 const classes = document.querySelectorAll('[data-set]');
 const birdList = document.querySelector('.bird__list')
 const birdName = document.querySelectorAll('[data-set]')
+const birdItem = document.querySelectorAll('.bird-item')
+const mainBg = document.querySelector('.main')
 
 const birdSong = [
   'drozd',
   'javoronok',
-  'slavka.',
+  'slavka',
   'solovey',
   'zarynka',
   'forest'
@@ -18,22 +20,18 @@ logo.addEventListener(('click'), () => {
   logo.classList.toggle('active');
   if (logo.classList.contains('active')) {
     isPlay = true;
-    song = 4
+    song = 5
     playAudio(birdSong[song])
   } else {
     pauseAudio()
   }
 })
-console.log(birdList)
-birdName.forEach(x => console.log(x))
 birdList.addEventListener('click', (ev) => {
   let clickBird = ev.target.dataset.set
-  birdSong.forEach((el) => {
-    if (el[clickBird] !== undefined) {
-      isPlay = true
-      playAudio(el[clickBird])
-    }
-  })
+  birdItem.forEach(el=>el.classList.remove('play'))
+  ev.target.classList.add('play')
+  isPlay = true
+  playAudio(clickBird)
 })
 
 let isPlay = false;
@@ -44,6 +42,7 @@ function playAudio(numSong) {
     audio.src = `./assets/audio/forest.mp3`
   } else {
     audio.src = `./assets/audio/${numSong}.mp3`
+    mainBg.style.backgroundImage = `url('./assets/img/birdImg/${numSong}.jpg')`
   }
 
   audio.currentTime = 0;
@@ -62,8 +61,6 @@ function pauseAudio() {
 }
 
 btnPlay.addEventListener('click', (ev) => {
-
-  console.log('aaaa')
   if (isPlay === false) {
     isPlay = true;
     playAudio();
