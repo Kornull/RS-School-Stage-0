@@ -188,7 +188,7 @@ p {
 }
 
 .time__track {
-  position: relative;
+ position: relative;
   margin: 0 auto;
   width: 250px;
   height: 10px;
@@ -206,8 +206,7 @@ p {
   height: 100%;
   background: linear-gradient(242deg, #22ed07, #ff0000);
 }
-
-.time {
+ .time {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

@@ -8,7 +8,6 @@ const lengthAudio = document.querySelector('.length')
 const timeTrack = document.querySelector('.time__track')
 const currentAudio = document.querySelector('.current')
 const progress = document.querySelector('.progress')
-const slider = document.querySelector('.slider')
 
 let numTrack = 0
 const music = [
@@ -16,8 +15,9 @@ const music = [
   './assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
   './assets/audio/Malia J - Smells Like Teen Spirit.mp3',
   './assets/audio/Slipknot - Unsainted.mp3',
-  '/assets/audio/Korn - Cold.mp3'
-]
+  '/assets/audio/Korn - Cold.mp3']
+
+
 const titleSong = [
   ['Bring Me The Horizon', 'Kingslayer'],
   ['Children of Bodom', 'Oops!'],
@@ -64,14 +64,15 @@ btnPrev.addEventListener('click', (ev) => {
   console.log('i--', i)
   playAudio(music[numTrack]);
 })
-// Next track
 
+// Next track
 function nextTrack () {
   numTrack++;
   playAudio(music[numTrack]);
 }
 // All time track
-audio.onloadedmetadata = function () {
+
+ audio.onloadedmetadata = function () {
   let seconds = Math.floor(audio.duration % 60);
   let minutes = Math.floor(audio.duration / 60);
   lengthAudio.textContent = `${minutes}:${seconds}`
@@ -110,3 +111,4 @@ function timeProgressBar(ev) {
 
 timeTrack.addEventListener('click', timeProgressBar)
 audio.addEventListener('ended', nextTrack)
+
