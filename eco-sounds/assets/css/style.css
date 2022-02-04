@@ -28,7 +28,7 @@ nav, footer, header, aside {
   --color-gold: #d1be86;
   --color-black: #000;
   --color-white: #fff;
-  --font1: 22px;
+  --font1: 18px;
 }
 
 body {
@@ -37,7 +37,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   color: #ffffff;
-  background: rgb(54, 54, 54);
+  background: #000000;
   line-height: 1.6;
   font-size: 15px;
   -ms-text-size-adjust: 100%;
@@ -98,7 +98,7 @@ p {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 40px;
   background: #000;
 }
 
@@ -106,7 +106,7 @@ p {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1360px;
   align-items: center;
   padding: 0px 20px;
   margin: 0 auto;
@@ -114,13 +114,16 @@ p {
 
 .header__logo {
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background: url('../img/logo/logo.svg') center center/cover no-repeat;
+  transition: filter .5s linear;
 }
 
 .header__logo.active {
   filter: invert(38%) sepia(31%) saturate(488%) hue-rotate(354deg) brightness(88%) contrast(85%);
+}.header__logo:hover {
+  filter: invert(9%) sepia(99%) saturate(7300%) hue-rotate(248deg) brightness(81%) contrast(132%);
 }
 
 
@@ -131,7 +134,7 @@ p {
 
 .bird-item {
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 50px;
   font-size: var(--font1);
   transition: color .3s ease;
 }
@@ -148,7 +151,7 @@ p {
   display: flex;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 120px) ;
+  height: calc(100vh - 50px) ;
   background: #000 url('../img/birdImg/forest.jpg') center center/cover no-repeat;
   transition: background .5s linear;
 }
@@ -182,7 +185,7 @@ p {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 40px;
   background: #000;
   margin: 0 auto;
 }
