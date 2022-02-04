@@ -155,17 +155,20 @@ p {
 /* Buttons */
 .btn__play--pause {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
   border-radius: 50%;
   background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
+  transition: box-shadow .3s linear,
+  filter .4s linear;
 }
-.btn.play{
+.btn__play--pause.play{
+  filter: drop-shadow(0px 0px 20px #0720ff);
   background: url('../img/buttonImg/pause.svg') center center/cover no-repeat;
 }
-.btn:hover {
-  box-shadow:0 0 15px var(--color-gold);
+.btn__play--pause:hover {
+  filter: drop-shadow(0px 0px 20px #3db406);
 }
 .audio__play {
   border-radius: 50%;
