@@ -1,4 +1,4 @@
-const btnPlay = document.querySelector('.btn');
+const btnPlay = document.querySelector('.btn__play--pause');
 const classes = document.querySelectorAll('[data-set]');
 
 const birdSong = [
