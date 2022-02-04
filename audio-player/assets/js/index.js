@@ -9,15 +9,15 @@ const timeTrack = document.querySelector('.time__track')
 const currentAudio = document.querySelector('.current')
 const progress = document.querySelector('.progress')
 
-
 let numTrack = 0
 const music = [
   './assets/audio/Bring Me The Horizon - Kingslayer.mp3',
   './assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
   './assets/audio/Malia J - Smells Like Teen Spirit.mp3',
-  './assets/audio/Slipknot_Unsainted.mp3',
-  '/assets/audio/Korn – Cold.mp3'
-]
+  './assets/audio/Slipknot - Unsainted.mp3',
+  '/assets/audio/Korn - Cold.mp3']
+
+
 const titleSong = [
   ['Bring Me The Horizon', 'Kingslayer'],
   ['Children of Bodom', 'Oops!'],
@@ -65,7 +65,13 @@ btnPrev.addEventListener('click', (ev) => {
   playAudio(music[numTrack]);
 })
 
+// Next track
+function nextTrack () {
+  numTrack++;
+  playAudio(music[numTrack]);
+}
 // All time track
+
  audio.onloadedmetadata = function () {
   let seconds = Math.floor(audio.duration % 60);
   let minutes = Math.floor(audio.duration / 60);
@@ -75,7 +81,7 @@ btnPrev.addEventListener('click', (ev) => {
 
 function playAudio() {
   audio.src = music[numTrack];
-  audio.currentTime = 0;
+  // audio.currentTime = 0;
   audio.play();
   nameArtist.textContent = titleSong[numTrack][0]
   songTitle.textContent = titleSong[numTrack][1]
@@ -84,3 +90,25 @@ function playAudio() {
 function pauseAudio() {
   audio.pause();
 }
+// Progress bar runing
+function progerssBar(ev) {
+  const { duration, currentTime } = ev.target
+  let progBar = Math.floor(100 / duration * currentTime);
+  progress.style.width = `${progBar}%`
+}
+audio.addEventListener('timeupdate', progerssBar)
+
+
+function timeProgressBar(ev) {
+  const width = timeTrack.clientWidth
+  const click = ev.offsetX
+  const duration = audio.duration
+  audio.currentTime = (duration / width) * click;
+  console.log(width)
+  console.log(click)
+}
+
+
+timeTrack.addEventListener('click', timeProgressBar)
+audio.addEventListener('ended', nextTrack)
+
