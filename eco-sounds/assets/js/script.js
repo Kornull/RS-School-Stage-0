@@ -49,7 +49,7 @@ btnPlay.addEventListener('click', (ev) => {
       clickBird = i.dataset.set;
     }
   }
-  if (logo.classList.contains('active')) {clickBird = 'forest'};
+  if (logo.classList.contains('active')) { clickBird = 'forest' };
 
   if (isPlay === false) {
     isPlay = true;
@@ -69,7 +69,6 @@ function playAudio(numSong) {
     audio.src = `./assets/audio/${numSong}.mp3`
     mainBg.style.backgroundImage = `url('./assets/img/birdImg/${numSong}.jpg')`
   }
-
   audio.currentTime = 0;
   if (isPlay === true) {
     btnPlay.classList.add('play');
