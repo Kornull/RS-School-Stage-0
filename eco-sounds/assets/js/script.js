@@ -1,10 +1,12 @@
 const logo = document.querySelector('.header__logo')
 const btnPlay = document.querySelector('.btn__play--pause');
-const classes = document.querySelectorAll('[data-set]');
 const birdList = document.querySelector('.bird__list')
 const birdName = document.querySelectorAll('[data-set]')
 const birdItem = document.querySelectorAll('.bird-item')
 const mainBg = document.querySelector('.main')
+const audio = new Audio()
+let isPlay = false;
+let clickBird;
 
 const birdSong = [
   'drozd',
@@ -15,28 +17,51 @@ const birdSong = [
   'forest'
 ]
 
-let song = 0;
+
+// Logo click
 logo.addEventListener(('click'), () => {
+  cleanList()
   logo.classList.toggle('active');
   if (logo.classList.contains('active')) {
     isPlay = true;
-    song = 5
-    playAudio(birdSong[song])
+    playAudio('forest')
   } else {
     pauseAudio()
   }
 })
+
+// Selection of bird sounds
 birdList.addEventListener('click', (ev) => {
-  let clickBird = ev.target.dataset.set
-  birdItem.forEach(el=>el.classList.remove('play'))
+  clickBird = ev.target.dataset.set
+  logo.classList.remove('active');
+  cleanList()
   ev.target.classList.add('play')
   isPlay = true
   playAudio(clickBird)
 })
 
-let isPlay = false;
-const audio = new Audio()
 
+// Button start/stop
+btnPlay.addEventListener('click', (ev) => {
+  // class check
+  for (let i of birdItem) {
+    if (i.classList.contains('play')) {
+      clickBird = i.dataset.set;
+    }
+  }
+  if (logo.classList.contains('active')) {clickBird = 'forest'};
+
+  if (isPlay === false) {
+    isPlay = true;
+    playAudio(clickBird);
+  }
+  else if (isPlay === true) {
+    isPlay = false;
+    pauseAudio();
+  }
+})
+
+// Run player
 function playAudio(numSong) {
   if (numSong === undefined) {
     audio.src = `./assets/audio/forest.mp3`
@@ -56,17 +81,9 @@ function playAudio(numSong) {
 }
 function pauseAudio() {
   btnPlay.classList.remove('play');
-  logo.classList.remove('active');
   audio.pause()
 }
 
-btnPlay.addEventListener('click', (ev) => {
-  if (isPlay === false) {
-    isPlay = true;
-    playAudio();
-  }
-  else if (isPlay === true) {
-    isPlay = false;
-    pauseAudio();
-  }
-})
+function cleanList() {
+  birdItem.forEach(el => el.classList.remove('play'))
+}
