@@ -158,7 +158,10 @@ p {
   height: 150px;
   margin: 0 auto;
   border-radius: 50%;
-  background: rgba(54, 54, 54, 0);
+  background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
+}
+.btn.play{
+  background: url('../img/buttonImg/pause.svg') center center/cover no-repeat;
 }
 .btn:hover {
   box-shadow:0 0 15px var(--color-gold);
