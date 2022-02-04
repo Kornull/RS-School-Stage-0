@@ -195,6 +195,7 @@ p {
   border-radius: 15px;
   background: linear-gradient(242deg, #00ffea, #0717ed);
   z-index: 1;
+  cursor: pointer;
 }
 
 .progress {
