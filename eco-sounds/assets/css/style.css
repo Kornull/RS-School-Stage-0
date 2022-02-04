@@ -143,6 +143,34 @@ p {
   color: var(--color-gold);
 }
 
+/* Main
+=================== */
+.main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 120px) ;
+  background: #000 url('../img/birdImg/forest.jpg') center center/cover no-repeat;
+}
+.btn {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(54, 54, 54, 0);
+}
+.btn:hover {
+  box-shadow:0 0 15px var(--color-gold);
+}
+.audio__play {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  fill:var(--color-gold)
+}
+/* Footer
+================== */
 .footer {
   position: absolute;
   bottom: 0;
