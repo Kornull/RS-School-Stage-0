@@ -9,6 +9,7 @@ const timeTrack = document.querySelector('.time__track');
 const currentAudio = document.querySelector('.current');
 const progress = document.querySelector('.progress');
 const condition = document.querySelector('.condition__player')
+const numberOfTracks = document.querySelector('.num__track')
 let seconds;
 let minutes;
 
@@ -30,6 +31,8 @@ const titleSong = [
 let i = 1;
 const audio = new Audio();
 // Start/Stop player
+
+numberOfTracks.textContent = `0 / ${music.length}`
 btnPlay.addEventListener('click', (ev) => {
   if (i % 2 !== 0) {
     btnPlay.classList.add('play');
@@ -81,6 +84,7 @@ function playAudio() {
   nameArtist.textContent = titleSong[numTrack][0]
   songTitle.textContent = titleSong[numTrack][1]
   condition.textContent = 'Play'
+  numberOfTracks.textContent = `${numTrack+1} / ${music.length}`
 
   imgMusic.src = `./assets/img/imgMusic/${numTrack}.jpg`;
 }
