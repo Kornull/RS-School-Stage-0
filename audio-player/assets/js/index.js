@@ -15,7 +15,7 @@ const music = [
   './assets/audio/Children of Bodom - Oops! I Did It Again.mp3',
   './assets/audio/Malia J - Smells Like Teen Spirit.mp3',
   './assets/audio/Slipknot - Unsainted.mp3',
-  '/assets/audio/Korn - Cold.mp3']
+  './assets/audio/Korn - Cold.mp3']
 
 
 const titleSong = [
