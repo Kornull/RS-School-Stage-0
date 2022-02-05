@@ -10,6 +10,7 @@ const currentAudio = document.querySelector('.current');
 const progress = document.querySelector('.progress');
 const condition = document.querySelector('.condition__player')
 const numberOfTracks = document.querySelector('.num__track')
+const repeatBtn = document.querySelector('.btn__repeat')
 let seconds;
 let minutes;
 
@@ -139,7 +140,11 @@ function timerTrack() {
   }, 1000);
 }
 
-
+repeatBtn.addEventListener('click',(ev) =>{
+  repeatBtn.classList.toggle('active');
+  if(repeatBtn.classList.contains('active')){
+    audio.addEventListener('ended', nextTrack)
+  } 
+})
 timeTrack.addEventListener('click', timeClickProgressBar)
-audio.addEventListener('ended', nextTrack)
 audio.addEventListener('timeupdate', progerssBar)
