@@ -66,13 +66,13 @@ btnPrev.addEventListener('click', (ev) => {
 })
 
 // Next track
-function nextTrack () {
+function nextTrack() {
   numTrack++;
   playAudio(music[numTrack]);
 }
 // All time track
 
- audio.onloadedmetadata = function () {
+audio.onloadedmetadata = function () {
   let seconds = Math.floor(audio.duration % 60);
   let minutes = Math.floor(audio.duration / 60);
   lengthAudio.textContent = `${minutes}:${seconds}`
@@ -104,6 +104,17 @@ function timeProgressBar(ev) {
   const click = ev.offsetX
   const duration = audio.duration
   audio.currentTime = (duration / width) * click;
+  // Time click
+  if (click) {
+    let min = Math.floor(((duration / width) * click) / 60)
+    let sec = Math.floor(((duration / width) * click) % 60)
+    if (sec < 10) {
+      sec = `0${sec}`;
+    }
+    currentAudio.textContent = `${min}:${sec}`
+  }
+
+  // }
   console.log(width)
   console.log(click)
 }
