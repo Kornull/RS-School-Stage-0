@@ -69,7 +69,6 @@ function playAudio(numSong) {
     audio.src = `./assets/audio/${numSong}.mp3`
     mainBg.style.backgroundImage = `url('./assets/img/birdImg/${numSong}.jpg')`
   }
-  audio.currentTime = 0;
   if (isPlay === true) {
     btnPlay.classList.add('play');
     audio.play();
@@ -86,3 +85,23 @@ function pauseAudio() {
 function cleanList() {
   birdItem.forEach(el => el.classList.remove('play'))
 }
+
+
+function uncklickBtn() {
+  console.log(btnPlay.classList.contains('play'))
+  let interval = setInterval(() => {
+    if (btnPlay.classList.contains('play') === false) { return clearInterval(interval) };
+    let sec = Math.floor((audio.currentTime));
+    let min = Math.floor((audio.duration));
+    if (sec < min) {
+      console.log(`${min}:${sec}`);
+    }
+    if (sec === min) {
+      clearInterval(interval)
+      return pauseAudio()
+    }
+  }, 1000);
+
+}
+
+btnPlay.addEventListener('click', uncklickBtn)
