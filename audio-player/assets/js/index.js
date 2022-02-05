@@ -8,6 +8,7 @@ const lengthAudio = document.querySelector('.length');
 const timeTrack = document.querySelector('.time__track');
 const currentAudio = document.querySelector('.current');
 const progress = document.querySelector('.progress');
+const condition = document.querySelector('.condition__player')
 let seconds;
 let minutes;
 
@@ -79,11 +80,13 @@ function playAudio() {
   timerTrack()
   nameArtist.textContent = titleSong[numTrack][0]
   songTitle.textContent = titleSong[numTrack][1]
+  condition.textContent = 'Play'
 
   imgMusic.src = `./assets/img/imgMusic/${numTrack}.jpg`;
 }
 // Stop
 function pauseAudio() {
+  condition.textContent = 'Stop'
   audio.pause();
 }
 
@@ -120,6 +123,7 @@ function nextTrack() {
   playAudio(music[numTrack]);
 }
 // Timer audio
+
 function timerTrack() {
   setInterval(() => {
     let sec = Math.floor((audio.currentTime % 60));
