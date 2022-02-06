@@ -101,7 +101,8 @@ a:hover {
   text-decoration: underline;
   color: var(--color-gold);
 }
-
+body { background: url('../img/birdImg/forest.jpg') center center/cover no-repeat;
+}
 /* Header
 =============== */
 .header {
