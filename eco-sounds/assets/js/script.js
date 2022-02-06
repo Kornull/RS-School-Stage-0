@@ -2,7 +2,7 @@ const logo = document.querySelector('.header__logo');
 const btnPlay = document.querySelector('.btn__play--pause');
 const birdList = document.querySelector('.bird__list');
 const birdItem = document.querySelectorAll('.bird-item');
-const mainBg = document.querySelector('.main');
+const mainBg = document.querySelector('.bg__img');
 const repeat = document.querySelector('.btn__repeat');
 const audio = new Audio();
 let isPlay = false;
@@ -24,7 +24,7 @@ logo.addEventListener(('click'), () => {
 function playAudio(numSong) {
   uncklickBtn()
   if (numSong !== undefined) {
-    mainBg.style.backgroundImage = `url('./assets/img/birdImg/${numSong}.jpg')`;
+    mainBg.src = `./assets/img/birdImg/${numSong}.jpg`;
     audio.src = `./assets/audio/${numSong}.mp3`;
   } else {
     audio.src = `./assets/audio/forest.mp3`;
@@ -54,12 +54,6 @@ birdList.addEventListener('click', (ev) => {
 
 // Button start/stop
 btnPlay.addEventListener('click', (ev) => {
-  // class check
-  for (let i of birdItem) {
-    if (i.classList.contains('play')) {
-      clickBird = i.dataset.set;
-    }
-  }
   if (logo.classList.contains('active')) { clickBird = 'forest' };
 
   if (isPlay === false) {
@@ -71,7 +65,6 @@ btnPlay.addEventListener('click', (ev) => {
     pauseAudio();
   }
 })
-
 
 
 function cleanList() {
