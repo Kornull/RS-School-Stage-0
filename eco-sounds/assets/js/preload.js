@@ -12,7 +12,8 @@ const birdImages = [
 function preloadImages() {
   let img = new Image();
   for (let i = 0; i < birdImages.length-1;i++){
-    img.url = `./img/birdImg/${birdImages[i]}.jpg`;
+    img.url = `url(./img/birdImg/${birdImages[i]}.jpg)`;
+    console.log(img.url)
     }
   }
 
