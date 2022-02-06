@@ -3,6 +3,7 @@ const btnPlay = document.querySelector('.btn__play--pause');
 const birdList = document.querySelector('.bird__list');
 const birdItem = document.querySelectorAll('.bird-item');
 const mainBg = document.querySelector('.main');
+const repeat = document.querySelector('.btn__repeat');
 const audio = new Audio();
 let isPlay = false;
 let clickBird;
@@ -10,6 +11,7 @@ let clickBird;
 // Logo click
 logo.addEventListener(('click'), () => {
   cleanList();
+
   logo.classList.toggle('active');
   if (logo.classList.contains('active')) {
     isPlay = true;
@@ -52,6 +54,7 @@ btnPlay.addEventListener('click', (ev) => {
 
 // Run player
 function playAudio(numSong) {
+  uncklickBtn()
   if (numSong === undefined) {
     audio.src = `./assets/audio/forest.mp3`;
   } else {
@@ -77,14 +80,11 @@ function cleanList() {
 
 // Turn off btn
 function uncklickBtn() {
-  // console.log(btnPlay.classList.contains('play'))
   let interval = setInterval(() => {
     if (!btnPlay.classList.contains('play')) { return clearInterval(interval) };
     let sec = Math.floor((audio.currentTime));
     let min = Math.floor((audio.duration));
-    // if (sec < min) {
-    //   console.log(`${min}:${sec}`);
-    // }
+    if (repeat.classList.contains('repeat')) { if (sec === min) {playAudio(); return clearInterval(interval) }}
     if (sec === min) {
       clearInterval(interval);
       return pauseAudio();
@@ -93,4 +93,8 @@ function uncklickBtn() {
 
 }
 
-btnPlay.addEventListener('click', uncklickBtn);
+// btnPlay.addEventListener('click', uncklickBtn);
+repeat.addEventListener('click', (ev) => {
+  repeat.classList.toggle('repeat');
+}
+);
