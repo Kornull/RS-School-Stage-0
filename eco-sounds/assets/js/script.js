@@ -20,27 +20,7 @@ logo.addEventListener(('click'), () => {
     pauseAudio();
   }
 })
-// Run player
-function playAudio(numSong) {
-  uncklickBtn()
-  if (numSong !== undefined) {
-    mainBg.src = `./assets/img/birdImg/${numSong}.jpg`;
-    audio.src = `./assets/audio/${numSong}.mp3`;
-  } else {
-    audio.src = `./assets/audio/forest.mp3`;
-  }
-  if (isPlay === true) {
-    btnPlay.classList.add('play');
-    audio.play();
-  }
-  else {
-    audio.pause();
-  }
-}
-function pauseAudio() {
-  btnPlay.classList.remove('play');
-  audio.pause();
-}
+
 // Selection of bird sounds
 birdList.addEventListener('click', (ev) => {
   clickBird = ev.target.dataset.set;
@@ -84,6 +64,27 @@ function uncklickBtn() {
     }
   }, 1000);
 
+}
+// Run player
+function playAudio(numSong) {
+  uncklickBtn()
+  if (numSong !== undefined) {
+    mainBg.src = `./assets/img/birdImg/${numSong}.jpg`;
+    audio.src = `./assets/audio/${numSong}.mp3`;
+  } else {
+    audio.src = `./assets/audio/forest.mp3`;
+  }
+  if (isPlay === true) {
+    btnPlay.classList.add('play');
+    audio.play();
+  }
+  else {
+    audio.pause();
+  }
+}
+function pauseAudio() {
+  btnPlay.classList.remove('play');
+  audio.pause();
 }
 
 // btnPlay.addEventListener('click', uncklickBtn);
