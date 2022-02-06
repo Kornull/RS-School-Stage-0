@@ -40,6 +40,8 @@ body {
   background: #000000;
   line-height: 1.6;
   font-size: 15px;
+  overflow: hidden;
+
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -101,8 +103,7 @@ a:hover {
   text-decoration: underline;
   color: var(--color-gold);
 }
-body { background: url('../img/birdImg/forest.jpg') center center/cover no-repeat;
-}
+
 /* Header
 =============== */
 .header {
@@ -163,28 +164,25 @@ body { background: url('../img/birdImg/forest.jpg') center center/cover no-repea
 /* Main
 =================== */
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 40px);
-  background: url('../img/birdImg/forest.jpg') center center/cover no-repeat;
-  transition: background .2s ease;
+
 }
 
-/* Repeat
-=============== */
-.repeat__song {
+.bg__img {
+  display: block;
   width: 100%;
-  max-width: 1360px;
-  height: 50px;
-  background: none;
-  margin-top: 50px;
+  height:100vh;
 }
 
 /* Buttons
 ================ */
 .btn__play--pause {
+  position: absolute;
+  top: 40%;
   display: block;
   width: 120px;
   height: 120px;
@@ -192,8 +190,8 @@ body { background: url('../img/birdImg/forest.jpg') center center/cover no-repea
   border-radius: 50%;
   background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
   transition: box-shadow .1s ease,
-    filter .4s linear;
-  margin-top: 370px;
+  filter .4s linear;
+  z-index: 5;
 }
 
 
@@ -210,16 +208,20 @@ body { background: url('../img/birdImg/forest.jpg') center center/cover no-repea
 }
 
 .btn__repeat {
+  position: absolute;
+  top: 55%;
   display: block;
   margin: 0 auto;
   width: 50px;
   height: 50px;
   background: url('../img/buttonImg/repeat-svgrepo-com.svg') center center/cover no-repeat;
+  z-index: 5;
 }
 
 .btn__repeat.repeat {
   filter: drop-shadow(0px 0px 10px #4400ff);
 }
+
 .repeat__song:hover,
 .btn__repeat:hover,
 .btn__play--pause:hover {
