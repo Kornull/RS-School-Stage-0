@@ -8,6 +8,17 @@ const audio = new Audio();
 let isPlay = false;
 let clickBird;
 
+const birdName = [
+  'drozd',
+  'forest',
+  'javoronok',
+  'slavka',
+  'solovey',
+  'zarynka',
+  'morning',
+  'kamishovka'
+];
+
 // Logo click
 logo.addEventListener(('click'), () => {
   cleanList();
@@ -46,7 +57,7 @@ btnPlay.addEventListener('click', (ev) => {
   }
 })
 
-
+// Clean bird list
 function cleanList() {
   birdItem.forEach(el => el.classList.remove('play'));
 }
@@ -54,13 +65,20 @@ function cleanList() {
 // Turn off btn
 function uncklickBtn() {
   let interval = setInterval(() => {
-    if (!btnPlay.classList.contains('play')) { return clearInterval(interval) };
     let sec = Math.floor((audio.currentTime));
     let min = Math.floor((audio.duration));
-    if (repeat.classList.contains('repeat')) { if (sec === min) {playAudio(); return clearInterval(interval) }}
-    if (sec === min) {
-      clearInterval(interval);
-      return pauseAudio();
+    if (repeat.classList.contains('repeat')) {
+      if (sec === min) {
+        let numbName = Math.floor(Math.random(0, birdName.length) * 10)
+        playAudio(birdName[numbName]);
+        return clearInterval(interval);
+      }
+    }
+    if (!repeat.classList.contains('repeat')) {
+      if (sec === min) {
+        pauseAudio();
+        return clearInterval(interval)
+      }
     }
   }, 1000);
 
@@ -68,6 +86,15 @@ function uncklickBtn() {
 // Run player
 function playAudio(numSong) {
   uncklickBtn()
+  // checking a random value from uncklickBtn
+  birdItem.forEach(x => {
+    if (x.dataset.set === numSong) {
+      console.log(x.dataset.set === numSong)
+      cleanList();
+      x.classList.add('play');
+    }
+  })
+
   if (numSong !== undefined) {
     mainBg.src = `./assets/img/birdImg/${numSong}.jpg`;
     audio.src = `./assets/audio/${numSong}.mp3`;
