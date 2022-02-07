@@ -8,6 +8,9 @@ const lengthAudio = document.querySelector('.length');
 const timeTrack = document.querySelector('.time__track');
 const currentAudio = document.querySelector('.current');
 const progress = document.querySelector('.progress');
+const condition = document.querySelector('.condition__player')
+const numberOfTracks = document.querySelector('.num__track')
+const repeatBtn = document.querySelector('.btn__repeat')
 let seconds;
 let minutes;
 
@@ -28,7 +31,9 @@ const titleSong = [
 
 let i = 1;
 const audio = new Audio();
+
 // Start/Stop player
+numberOfTracks.textContent = `0 / ${music.length}`
 btnPlay.addEventListener('click', (ev) => {
   if (i % 2 !== 0) {
     btnPlay.classList.add('play');
@@ -79,11 +84,17 @@ function playAudio() {
   timerTrack()
   nameArtist.textContent = titleSong[numTrack][0]
   songTitle.textContent = titleSong[numTrack][1]
+  condition.textContent = 'Play'
+  numberOfTracks.textContent = `${numTrack + 1} / ${music.length}`
 
   imgMusic.src = `./assets/img/imgMusic/${numTrack}.jpg`;
 }
+
 // Stop
 function pauseAudio() {
+  audio.currentTime = 0
+  btnPlay.classList.remove('play')
+  condition.textContent = 'Stop'
   audio.pause();
 }
 
@@ -91,12 +102,20 @@ function pauseAudio() {
 function progerssBar(ev) {
   const { duration, currentTime } = ev.target
   let progBar = Math.floor(100 / duration * currentTime);
-  progress.style.width = `${progBar}%`
+  progress.value = `${progBar}`
+  let x = progress.value;
+  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  progress.style.background = bgProgress
 }
+progress.addEventListener('mousemove', () => {
+  let x = progress.value;
+  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  progress.style.background = bgProgress
+})
 
 // Click progress bar
 function timeClickProgressBar(ev) {
-  const width = timeTrack.clientWidth;
+  const width = progress.clientWidth;
   const click = ev.offsetX;
   const duration = audio.duration;
   audio.currentTime = (duration / width) * click;
@@ -112,13 +131,19 @@ function timeClickProgressBar(ev) {
 }
 
 // Next track
-function nextTrack() {
-  numTrack++;
-  if (numTrack > music.length - 1) {
-    numTrack = 0;
+function nextTrack(cond) {
+  if (cond === true) {
+    numTrack++;
+    if (numTrack > music.length - 1) {
+      numTrack = 0;
+    }
+    playAudio(music[numTrack]);
+  } else {
+    pauseAudio()
+    return;
   }
-  playAudio(music[numTrack]);
 }
+
 // Timer audio
 function timerTrack() {
   setInterval(() => {
@@ -126,12 +151,19 @@ function timerTrack() {
     let min = Math.floor((audio.currentTime / 60));
     if (sec < 10) {
       sec = `0${sec}`;
+    } if (audio.currentTime === audio.duration && repeatBtn.classList.contains('active') === true) {
+      audio.addEventListener('ended', nextTrack(true))
+    } if (audio.currentTime === audio.duration && repeatBtn.classList.contains('active') === false) {
+      audio.addEventListener('ended', nextTrack(false))
     }
     currentAudio.textContent = `${min}:${sec}`;
   }, 1000);
+
 }
 
+repeatBtn.addEventListener('click', (ev) => {
+  repeatBtn.classList.toggle('active');
 
+})
 timeTrack.addEventListener('click', timeClickProgressBar)
-audio.addEventListener('ended', nextTrack)
 audio.addEventListener('timeupdate', progerssBar)
