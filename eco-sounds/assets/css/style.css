@@ -177,12 +177,20 @@ a:hover {
   width: 100%;
   height:100vh;
 }
+.btns {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  width: 150px;
+  height: 200px;
+}
 
 /* Buttons
 ================ */
 .btn__play--pause {
-  position: absolute;
-  top: 40%;
   display: block;
   width: 120px;
   height: 120px;
@@ -190,8 +198,7 @@ a:hover {
   border-radius: 50%;
   background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
   transition: box-shadow .1s ease,
-  filter .4s linear;
-  z-index: 5;
+  filter .4s linear;margin-bottom: 15px;
 }
 
 
@@ -208,14 +215,11 @@ a:hover {
 }
 
 .btn__repeat {
-  position: absolute;
-  top: 55%;
   display: block;
   margin: 0 auto;
   width: 50px;
   height: 50px;
   background: url('../img/buttonImg/repeat-svgrepo-com.svg') center center/cover no-repeat;
-  z-index: 5;
 }
 
 .btn__repeat.repeat {
