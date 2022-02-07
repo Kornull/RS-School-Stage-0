@@ -31,8 +31,8 @@ const titleSong = [
 
 let i = 1;
 const audio = new Audio();
-// Start/Stop player
 
+// Start/Stop player
 numberOfTracks.textContent = `0 / ${music.length}`
 btnPlay.addEventListener('click', (ev) => {
   if (i % 2 !== 0) {
@@ -89,6 +89,7 @@ function playAudio() {
 
   imgMusic.src = `./assets/img/imgMusic/${numTrack}.jpg`;
 }
+
 // Stop
 function pauseAudio() {
   audio.currentTime = 0
@@ -102,7 +103,15 @@ function progerssBar(ev) {
   const { duration, currentTime } = ev.target
   let progBar = Math.floor(100 / duration * currentTime);
   progress.value = `${progBar}`
+  let x = progress.value;
+  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  progress.style.background = bgProgress
 }
+progress.addEventListener('mousemove', () => {
+  let x = progress.value;
+  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  progress.style.background = bgProgress
+})
 
 // Click progress bar
 function timeClickProgressBar(ev) {
@@ -127,7 +136,7 @@ function nextTrack(cond) {
     numTrack++;
     if (numTrack > music.length - 1) {
       numTrack = 0;
-    } 
+    }
     playAudio(music[numTrack]);
   } else {
     pauseAudio()
