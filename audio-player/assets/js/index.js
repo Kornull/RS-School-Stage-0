@@ -122,12 +122,17 @@ function timeClickProgressBar(ev) {
 }
 
 // Next track
-function nextTrack() {
-  numTrack++;
-  if (numTrack > music.length - 1) {
-    numTrack = 0;
+function nextTrack(cond) {
+  if (cond === true) {
+    numTrack++;
+    if (numTrack > music.length - 1) {
+      numTrack = 0;
+    } 
+    playAudio(music[numTrack]);
+  } else {
+    pauseAudio()
+    return;
   }
-  playAudio(music[numTrack]);
 }
 
 // Timer audio
@@ -137,12 +142,11 @@ function timerTrack() {
     let min = Math.floor((audio.currentTime / 60));
     if (sec < 10) {
       sec = `0${sec}`;
-    } if (repeatBtn.classList.contains('active')) {
-      audio.addEventListener('ended', nextTrack)
-    }if (!repeatBtn.classList.contains('active')) {
-      audio.addEventListener('ended', pauseAudio)
+    } if (audio.currentTime === audio.duration && repeatBtn.classList.contains('active') === true) {
+      audio.addEventListener('ended', nextTrack(true))
+    } if (audio.currentTime === audio.duration && repeatBtn.classList.contains('active') === false) {
+      audio.addEventListener('ended', nextTrack(false))
     }
-
     currentAudio.textContent = `${min}:${sec}`;
   }, 1000);
 
