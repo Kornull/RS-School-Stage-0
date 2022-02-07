@@ -222,27 +222,30 @@ p {
   overflow: hidden;
   margin-bottom: 10px;
 }
-
-.time__track {
-  position: relative;
-  margin: 0 auto;
-  width: 250px;
+input[type="range"]{
+  -webkit-appearance:none;
+  width: 50%;
+  outline: none;
   height: 10px;
-  border-radius: 15px;
-  background: linear-gradient(242deg, #00ffea, #0717ed);
-  z-index: 1;
+  background: rgb(51, 255, 0);
+  margin: 20px 15px;
+  border-radius: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px; width: 15px;
+  background: red;
+  border-radius: 50px;
   cursor: pointer;
 }
 
-.progress {
-  position: absolute;
-  left: 0;
-  appearance: none;
-  width: 0%;
-  border-radius: 15px;
-  height: 100%;
-  background: linear-gradient(242deg, #22ed07, #ff0000);
+.time__track input[type="range"]{
+  width: 250px;
+
 }
+
+.time__track {margin: 0 auto;}
 
 .time {
   display: flex;

@@ -85,12 +85,14 @@ function playAudio() {
   nameArtist.textContent = titleSong[numTrack][0]
   songTitle.textContent = titleSong[numTrack][1]
   condition.textContent = 'Play'
-  numberOfTracks.textContent = `${numTrack+1} / ${music.length}`
+  numberOfTracks.textContent = `${numTrack + 1} / ${music.length}`
 
   imgMusic.src = `./assets/img/imgMusic/${numTrack}.jpg`;
 }
 // Stop
 function pauseAudio() {
+  audio.currentTime = 0
+  btnPlay.classList.remove('play')
   condition.textContent = 'Stop'
   audio.pause();
 }
@@ -99,12 +101,12 @@ function pauseAudio() {
 function progerssBar(ev) {
   const { duration, currentTime } = ev.target
   let progBar = Math.floor(100 / duration * currentTime);
-  progress.style.width = `${progBar}%`
+  progress.value = `${progBar}`
 }
 
 // Click progress bar
 function timeClickProgressBar(ev) {
-  const width = timeTrack.clientWidth;
+  const width = progress.clientWidth;
   const click = ev.offsetX;
   const duration = audio.duration;
   audio.currentTime = (duration / width) * click;
@@ -127,24 +129,28 @@ function nextTrack() {
   }
   playAudio(music[numTrack]);
 }
-// Timer audio
 
+// Timer audio
 function timerTrack() {
   setInterval(() => {
     let sec = Math.floor((audio.currentTime % 60));
     let min = Math.floor((audio.currentTime / 60));
     if (sec < 10) {
       sec = `0${sec}`;
+    } if (repeatBtn.classList.contains('active')) {
+      audio.addEventListener('ended', nextTrack)
+    }if (!repeatBtn.classList.contains('active')) {
+      audio.addEventListener('ended', pauseAudio)
     }
+
     currentAudio.textContent = `${min}:${sec}`;
   }, 1000);
+
 }
 
-repeatBtn.addEventListener('click',(ev) =>{
+repeatBtn.addEventListener('click', (ev) => {
   repeatBtn.classList.toggle('active');
-  if(repeatBtn.classList.contains('active')){
-    audio.addEventListener('ended', nextTrack)
-  } 
+
 })
 timeTrack.addEventListener('click', timeClickProgressBar)
 audio.addEventListener('timeupdate', progerssBar)
