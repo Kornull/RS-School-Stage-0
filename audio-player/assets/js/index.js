@@ -104,12 +104,12 @@ function progerssBar(ev) {
   let progBar = Math.floor(100 / duration * currentTime);
   progress.value = `${progBar}`
   let x = progress.value;
-  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  let bgProgress = `linear-gradient(90deg, rgb(245, 0, 0),rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
   progress.style.background = bgProgress
 }
 progress.addEventListener('mousemove', () => {
   let x = progress.value;
-  let bgProgress = `linear-gradient(90deg, rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
+  let bgProgress = `linear-gradient(90deg, rgb(245, 0, 0),rgb(255, 251, 0)${x}%, rgb(4, 220, 248) 0%)`;
   progress.style.background = bgProgress
 })
 
