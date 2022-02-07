@@ -179,7 +179,7 @@ a:hover {
 }
 .btns {
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 45%;
   display: flex;
   flex-direction: column;
@@ -192,8 +192,8 @@ a:hover {
 ================ */
 .btn__play--pause {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto;
   border-radius: 50%;
   background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
@@ -207,20 +207,14 @@ a:hover {
   background: url('../img/buttonImg/pause.svg') center center/cover no-repeat;
 }
 
-.audio__play {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  fill: var(--color-black)
-}
 svg {
   background: NONE;
 }
 .btn__repeat {
   display: block;
   margin: 0 auto;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: url('../img/buttonImg/shuffle.svg') center center/cover no-repeat;
 }
 
