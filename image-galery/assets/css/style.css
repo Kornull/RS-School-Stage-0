@@ -39,10 +39,9 @@ body {
   font-family: 'Arial', sans-serif;
   font-weight: 400;
   color: #050505;
-  background: var(--color-white);
+  background: var(--color-black);
   line-height: 1.6;
   font-size: 15px;
-  overflow: hidden;
 
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -83,6 +82,7 @@ ul li {
 }
 
 img {
+  /* width: 30px; */
   max-width: 100%;
   height: auto;
 }
@@ -95,4 +95,23 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0 0 10px;
 }
+
 /* ============ */
+
+.img__galery {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1050px;
+  background: var(--color-black);
+  margin: 50px auto;
+  border-radius: 15px;
+  border: 2px solid var(--color-gold);
+}
+
+.gallery-img {
+  width: 330px;
+  height: 200px;
+  margin-bottom: 10px;
+}
