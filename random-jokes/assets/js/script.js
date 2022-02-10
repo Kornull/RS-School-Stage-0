@@ -1,9 +1,10 @@
+// import json from '../json/belarusian_quotes.json'
 const text = document.querySelector('.text')
 const author = document.querySelector('.author')
 
 // const url = 'https://type.fit/api/quotes'
 async function getQuotes() {
-  const quotes = '../../assets/json/belarusian_quotes.json';
+  const quotes = '/assets/json/belarusian_quotes.json';
   const res = await fetch(quotes);
   const data = await res.json();
   min = Math.ceil(0);
