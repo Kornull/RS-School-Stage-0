@@ -27,17 +27,19 @@ nav, footer, header, aside {
 :root {
   --color-gold: #d1be86;
   --color-black: #000;
+  --color-gray: #e0e0e0;
   --color-white: #fff;
-  --font1: 18px;
+  --font1: 22px;
+  --font2: 28px;
 }
 
 body {
   width: 100%;
   font-size: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Serif 4', sans-serif;
   font-weight: 400;
   color: #ffffff;
-  background: #000000;
+  background: var(--color-white);
   line-height: 1.6;
   font-size: 15px;
   overflow: hidden;
@@ -92,4 +94,32 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0 0 10px;
+}
+/* ============ */
+
+.container{
+  position: relative;
+  width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.quotes {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  text-align: center;
+  background: var(--color-gray);
+  width: 70%;
+  height: auto ;
+}
+.text {
+  padding: 0 15px;
+  font-style: italic;
+  color: var(--color-black);
+  font-size: var(--font1);
+  margin-bottom: 10px;
+}
+.author {
+  color: var(--color-black);
+  font-size: var(--font2);
 }
