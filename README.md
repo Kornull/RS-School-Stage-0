@@ -11,6 +11,6 @@ Eco-sounds-task:
 
 https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/eco-sounds/
 
-Random-jokes-task:
+image-galery-task:
 
-https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/random-jokes/
+https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/image-galery/
