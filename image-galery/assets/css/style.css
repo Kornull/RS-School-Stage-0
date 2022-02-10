@@ -114,4 +114,11 @@ p {
   width: 330px;
   height: 200px;
   margin-bottom: 10px;
+  transition: transform .3s ease;
+}
+
+.gallery-img:hover {
+  border-radius: 15px;
+  box-shadow: 0 0 15px 0 var(--color-black);
+  transform: scale(1.2);
 }
