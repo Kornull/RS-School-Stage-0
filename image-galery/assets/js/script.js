@@ -1,4 +1,4 @@
-const url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+const url = 'https://api.unsplash.com/search/photos?query=forest&per_page=30&orientation=landscape&client_id=Z1N0SeXp8Y6iG-yUf37EhP3ElsRfHdsLnfKmkV8leng';
 const galleryContainer = document.querySelector('.img__galery')
 const img = document.createElement('img');
 
@@ -10,7 +10,6 @@ async function getData() {
 
     const img = document.createElement('img');
     img.classList.add('gallery-img')
-
     img.src = `${x.urls.regular}`;
     img.alt = `image`;
     galleryContainer.append(img);
