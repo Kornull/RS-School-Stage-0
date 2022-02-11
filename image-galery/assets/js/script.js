@@ -22,7 +22,7 @@ function clear(el) {
 // Collect image cards
 async function getData(ur) {
   clear(galleryContainer)
-  const url = `https://api.unsplash.com/search/photos?query=${ur}&per_page=21&orientation=landscape&client_id=Z1N0SeXp8Y6iG-yUf37EhP3ElsRfHdsLnfKmkV8leng`
+  const url = `https://api.unsplash.com/search/photos?query=${ur}&per_page=30&orientation=landscape&client_id=Z1N0SeXp8Y6iG-yUf37EhP3ElsRfHdsLnfKmkV8leng`
   const res = await fetch(url);
   const data = await res.json();
   let i = 0
