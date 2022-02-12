@@ -14,10 +14,18 @@ input.addEventListener('keydown', (e) => {
   }
 })
 
+// Click search
+document.querySelector('.search__img').addEventListener('click', () => {
+  search = input.value;
+  getData(search);
+});
+
 // Clean value
 document.querySelector('.clean__text').addEventListener('click', () => {
-input.value = '';
-})
+  input.value = '';
+  input.classList.add('active');
+  input.focus()
+});
 
 // Clean block
 function clear(el) {
