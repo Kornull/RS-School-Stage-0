@@ -56,6 +56,17 @@ function randomCard() {
   })
 }
 
-
+function resetCard() {
+  cards.forEach(x => {
+    x.classList.remove('open');
+    x.classList.remove('flip');
+  })
+  hasFlipCard = false;
+  blockCard = false;
+  oneCard = null;
+  twoCard = null;
+  console.log(cardlist)
+  randomCard()
+}
 
 randomCard()
