@@ -1,0 +1,162 @@
+/* Zeroing
+========================*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+:root {
+  --color-gold: #d1be86;
+  --color-black: #000;
+  --color-gray: #e0e0e0;
+  --color-white: #fff;
+  --font1: 20px;
+  --font2: 28px;
+}
+
+body {
+  width: 100%;
+  font-size: 100%;
+  font-family: 'Source Serif 4', sans-serif;
+  font-weight: 400;
+  color: var(--color-black);
+  background: var(--color-gold);
+  line-height: 1.6;
+  font-size: 15px;
+
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul ol,
+ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  /* width: 30px; */
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* ============ */
+
+/* Container game
+================= */
+
+.container__game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 800px;
+  height: 820px;
+  background: rgb(147, 237, 240);
+  margin: 70px auto 0;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgb(255, 0, 0);
+  perspective: 2200px;
+  position: relative;
+  z-index: 0;
+}
+
+/* Cards
+================== */
+.card {
+  position: relative;
+  margin: 5px;
+  width: 23%;
+  height: 23%;
+  background: rgb(255, 238, 0);
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transform: scale(1);
+  transition: transform .4s;
+  z-index: 2;
+
+}
+
+.card:active {
+  transform: scale(0.8);
+  transition: transform .2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.face__card,
+.bottom__card {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  backface-visibility: hidden;
+}
+.bottom__card {
+  transform: rotateY(180deg);
+}
+
+.open {
+  background: rgba(0, 17, 255, 0.616);
+  transition: background .9s ease;
+}
