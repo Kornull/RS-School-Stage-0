@@ -1,5 +1,5 @@
 const cards = document.querySelectorAll('.card')
-const min = document.querySelector('.min')
+const countClick = document.querySelector('.click__count')
 const sec = document.querySelector('.sec')
 const btnRun = document.querySelector('.reset')
 const btnsLevel = document.querySelectorAll('.level')
@@ -7,14 +7,20 @@ let hasFlipCard = false;
 let blockCard = false;
 let cardlist = [];
 let oneCard, twoCard;
+let click = 0
+let numb = 1
+let count = 0
 
 
-btnRun.addEventListener('click', ()=>{
-  resetCard();
-  blockBtns()
-  btnRun.disabled = true
+document.querySelector('.container__game').addEventListener('click',()=> {
+  click++;
+  countClick.textContent = click
 })
 
+btnRun.addEventListener('click', () => {
+  resetCard();
+
+})
 
 // track click
 cards.forEach((x, i) => {
@@ -31,12 +37,10 @@ cards.forEach((x, i) => {
     hasFlipCard = false;
     checkCards();
   })
-
 })
 
 // Card matching check
 function checkCards() {
-
   if (oneCard.dataset.comic === twoCard.dataset.comic) {
     setTimeout(() => openClass(), 500);
     return;
@@ -48,6 +52,12 @@ function checkCards() {
 function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
+  count++
+  console.log(count, 'count')
+  if (count === cardlist.length / 2) {
+    console.log('win')
+    setLocalStorage(click)
+  }
 }
 
 //  Close cards
@@ -78,43 +88,21 @@ function resetCard() {
   blockCard = false;
   oneCard = null;
   twoCard = null;
+  click = 0;
+  count = 0;
+  countClick.textContent = 0;
   randomCard();
-  timerGame();
 }
 
 randomCard();
-let time = 1 * 60
-function timerGame() {
-  let i = 0;
-  let m = 0;
-  const timerRound =
-    setInterval(() => {
-      sec.textContent = '00'
-      min.textContent = '0'
-      time--;
-      console.log(time)
-      i++;
-      if (i < 10) {
-        sec.textContent = '0' + i
-      } else { sec.textContent = `${i}` }
-      if (i === 60) {
-        i = 0;
-        m++;
-        sec.textContent = '00'
-        min.textContent = `${m}`
-      }
-      if (time <= 0) {
-        btnsLevel.forEach(x=> x.disabled = false)
-        btnRun.disabled = false
-        clearInterval(timerRound)
-        time = 1 * 60
-        return;
-      }
-    }, 1000)
-}
 
-// Blocked btns
-
-function blockBtns () {
-  btnsLevel.forEach(x=> x.disabled = true)
+function setLocalStorage(click) {
+  localStorage.setItem(`${numb++}`, click);
+  if (numb > 10) {
+    numb = 1
+  }
 }
+window.addEventListener('beforeunload', setLocalStorage)
+// for
+// console.log(localStorage.key(1))
+// console.log(localStorage.length)
