@@ -1,9 +1,19 @@
 const cards = document.querySelectorAll('.card')
-document.querySelector('.reset').addEventListener('click', resetCard)
+const min = document.querySelector('.min')
+const sec = document.querySelector('.sec')
+const btnRun = document.querySelector('.reset')
 let hasFlipCard = false;
 let blockCard = false;
 let cardlist = [];
 let oneCard, twoCard;
+let time = 1 * 60
+
+
+btnRun.addEventListener('click', ()=>{
+  resetCard();
+  btnRun.disabled = true
+})
+
 
 // track click
 cards.forEach((x, i) => {
@@ -49,13 +59,15 @@ function closeCards() {
   }, 500);
 }
 
+// Shuffle cards
 function randomCard() {
   cards.forEach(x => {
     let randomNumb = Math.floor(Math.random() * cardlist.length);
-    x.style.order =randomNumb
+    x.style.order = randomNumb;
   })
 }
 
+// Reset cards
 function resetCard() {
   cards.forEach(x => {
     x.classList.remove('open');
@@ -65,8 +77,39 @@ function resetCard() {
   blockCard = false;
   oneCard = null;
   twoCard = null;
-  console.log(cardlist)
-  randomCard()
+  randomCard();
+  timerGame();
 }
 
-randomCard()
+randomCard();
+
+
+
+function timerGame() {
+  let i = 0;
+  let m = 0;
+  const timerRound =
+    setInterval(() => {
+      sec.textContent = '00'
+      min.textContent = '0'
+      time--;
+      console.log(time)
+      i++;
+      if (i < 10) {
+        sec.textContent = '0' + i
+      } else { sec.textContent = `${i}` }
+      if (i === 60) {
+        i = 0;
+        m++;
+        sec.textContent = '00'
+        min.textContent = `${m}`
+      }
+      if (time <= 0) {
+        btnRun.disabled = false
+        clearInterval(timerRound)
+        time = 1 * 60
+        return;
+      }
+    }, 1000)
+
+}
