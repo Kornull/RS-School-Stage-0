@@ -36,10 +36,10 @@ nav, footer, header, aside {
 body {
   width: 100%;
   font-size: 100%;
-  font-family: 'Source Serif 4', sans-serif;
+  font-family: 'Audiowide', cursive;
   font-weight: 400;
   color: var(--color-black);
-  background: var(--color-gold);
+  background: var(--color-black);
   line-height: 1.6;
   font-size: 15px;
 
@@ -108,12 +108,43 @@ p {
   margin: 0 auto;
 }
 
+.win {
+  position: absolute;
+  top: 10%;
+  left: 32%;
+  width: 600px;
+  height: 800px;
+  background: none;
+  overflow: hidden;
+}
+
+.wins {
+  z-index: 50;
+}
+
+.winner {
+  width: 100%;
+  height: auto;
+}
+
+.count__clicks {
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--font2);
+  font-weight: bold;
+  color: #000000;
+
+
+}
+
 .section__title {
+  font-family: 'Shizuru', cursive;
   position: absolute;
   top: 0;
-  left: 50%;
-  font-size: var(--font2);
-  color: red;
+  left: 41%;
+  font-size: 50px;
+  color: #0077ff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffb000, 0 0 80px #ffb000, 0 0 90px #ffb000, 0 0 100px #fffb00, 0 0 150px #ffb000;
 }
 
 /* Container game
@@ -123,16 +154,27 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 800px;
+  width: 990px;
   height: 820px;
-  background: rgb(147, 237, 240);
-  margin: 70px auto 0;
+  background: #35bab4;
+  margin: 90px auto 0;
   border-radius: 15px;
   box-shadow: 0 0 15px rgb(255, 0, 0);
   perspective: 2200px;
   position: relative;
   z-index: 0;
   padding: 5px;
+
+}
+
+.table.records {
+  text-align: center;
+}
+
+.storage {
+  font-size: var(--font2);
+  color: var(--color-gold);
+  margin-bottom: 15px;
 }
 
 /* Cards
@@ -140,7 +182,7 @@ p {
 .card {
   position: relative;
   margin: 5px;
-  width: 23%;
+  width: 18%;
   height: 23%;
   background: rgb(255, 238, 0);
   border-radius: 10px;
@@ -148,6 +190,7 @@ p {
   transform: scale(1);
   transition: transform .4s;
   z-index: 2;
+  box-shadow: 0 0 10px #000;
 }
 
 .card:active {
@@ -166,7 +209,7 @@ p {
   top: 5px;
   left: 10px;
   width: 90%;
-  height: 90%;
+  height: 95%;
   margin: 0 auto;
   backface-visibility: hidden;
 }
@@ -176,16 +219,24 @@ p {
 }
 
 .open {
-  background: rgba(8, 17, 146, 0.616);
+  background: rgb(255, 0, 255);
   box-shadow: 5px 5px 0px 3px rgba(34, 60, 80, 0.965);
-  transition: background .8s ease,
-    box-shadow .8s ease;
+  transition: box-shadow .8s ease;
 }
 
 .click {
-  font-size: var(--font2);
+  font-size: var(--font1);
   color: green;
-  width: 180px;
+  width: 150px;
+  text-align: center;
+
+}
+
+.click__count {
+  width: 100%;
+  max-width: 80px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Buttons */
@@ -210,7 +261,19 @@ p {
   margin-bottom: 10px;
   border-radius: 15px;
   font-size: var(--font1);
-  color:var(--color-white);
-  background-image: linear-gradient(to right, #5a70d4, #834fb9, #5a80d2, #892ad8);
+  color: #000000;
+  background: linear-gradient(to right, #5a70d4, #834fb9, #5a80d2, #892ad8);
   box-shadow: 0 4px 15px 0 rgba(136, 92, 197, 0.75);
+  transition: box-shadow .3s ease;
+}
+
+.reset:hover {
+  color: #e5ff00;
+  background-image: linear-gradient(to right, #eeff00, #f60202, #000000, #000000);
+  box-shadow: 0 4px 15px 0 #ffffff;
+}
+
+.count__game {
+  color: #e0e0e0;
+  font-size: var(--font1);
 }
