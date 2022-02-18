@@ -1,9 +1,26 @@
 const cards = document.querySelectorAll('.card')
-document.querySelector('.reset').addEventListener('click', resetCard)
+const countClick = document.querySelector('.click__count')
+const sec = document.querySelector('.sec')
+const btnRun = document.querySelector('.reset')
+const btnsLevel = document.querySelectorAll('.level')
 let hasFlipCard = false;
 let blockCard = false;
 let cardlist = [];
 let oneCard, twoCard;
+let click = 0
+let numb = 1
+let count = 0
+
+
+document.querySelector('.container__game').addEventListener('click',()=> {
+  click++;
+  countClick.textContent = click
+})
+
+btnRun.addEventListener('click', () => {
+  resetCard();
+
+})
 
 // track click
 cards.forEach((x, i) => {
@@ -20,12 +37,10 @@ cards.forEach((x, i) => {
     hasFlipCard = false;
     checkCards();
   })
-
 })
 
 // Card matching check
 function checkCards() {
-
   if (oneCard.dataset.comic === twoCard.dataset.comic) {
     setTimeout(() => openClass(), 500);
     return;
@@ -37,6 +52,12 @@ function checkCards() {
 function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
+  count++
+  console.log(count, 'count')
+  if (count === cardlist.length / 2) {
+    console.log('win')
+    setLocalStorage(click)
+  }
 }
 
 //  Close cards
@@ -49,13 +70,15 @@ function closeCards() {
   }, 500);
 }
 
+// Shuffle cards
 function randomCard() {
   cards.forEach(x => {
     let randomNumb = Math.floor(Math.random() * cardlist.length);
-    x.style.order =randomNumb
+    x.style.order = randomNumb;
   })
 }
 
+// Reset cards
 function resetCard() {
   cards.forEach(x => {
     x.classList.remove('open');
@@ -65,8 +88,21 @@ function resetCard() {
   blockCard = false;
   oneCard = null;
   twoCard = null;
-  console.log(cardlist)
-  randomCard()
+  click = 0;
+  count = 0;
+  countClick.textContent = 0;
+  randomCard();
 }
 
-randomCard()
+randomCard();
+
+function setLocalStorage(click) {
+  localStorage.setItem(`${numb++}`, click);
+  if (numb > 10) {
+    numb = 1
+  }
+}
+window.addEventListener('beforeunload', setLocalStorage)
+// for
+// console.log(localStorage.key(1))
+// console.log(localStorage.length)

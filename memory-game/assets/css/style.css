@@ -98,6 +98,24 @@ p {
 
 /* ============ */
 
+.game__dask {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1368px;
+  margin: 0 auto;
+}
+
+.section__title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: var(--font2);
+  color: red;
+}
+
 /* Container game
 ================= */
 
@@ -152,20 +170,47 @@ p {
   margin: 0 auto;
   backface-visibility: hidden;
 }
+
 .bottom__card {
   transform: rotateY(180deg);
 }
 
 .open {
   background: rgba(8, 17, 146, 0.616);
-  box-shadow:5px 5px 0px 3px rgba(34, 60, 80, 0.965);
+  box-shadow: 5px 5px 0px 3px rgba(34, 60, 80, 0.965);
   transition: background .8s ease,
-  box-shadow .8s ease;
+    box-shadow .8s ease;
+}
+
+.click {
+  font-size: var(--font2);
+  color: green;
+  width: 180px;
+}
+
+/* Buttons */
+
+.btns {
+  width: 280px;
+}
+
+.btns,
+.btn__level {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .reset {
   display: block;
-  width: 50px;
-  height: 40px;
+  width: 190px;
+  height: 50px;
+  margin-left: 20px;
   margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  font-size: var(--font1);
+  color:var(--color-white);
+  background-image: linear-gradient(to right, #5a70d4, #834fb9, #5a80d2, #892ad8);
+  box-shadow: 0 4px 15px 0 rgba(136, 92, 197, 0.75);
 }

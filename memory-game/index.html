@@ -10,76 +10,114 @@
 </head>
 
 <body>
-  <button class="reset">
-    run
-  </button>
-  <div class="container__game">
-    <div class="card" data-comic="harly">
-      <img src="./assets/img/question.png" class="face__card"  alt="">
-      <img src="./assets/img/harly.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="harly">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/harly.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="batman">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/batman.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="batman">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/batman.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="boom">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/boom.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="boom">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/boom.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="joker">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/joker.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="joker">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/joker.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="smile">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/smile.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="smile">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/smile.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="kaboom">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/kaboom.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="kaboom">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/kaboom.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="pow">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/pow.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="pow">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/pow.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="wing">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/wing.png" class="bottom__card" alt="">
-    </div>
-    <div class="card" data-comic="wing">
-      <img src="./assets/img/question.png" class="face__card" alt="">
-      <img src="./assets/img/wing.png" class="bottom__card" alt="">
+  <section class="game__dask">
+    <div class="section__title">
+      <h1>MEMO</h1>
     </div>
 
-  </div>
+    <!-- Btns -->
+    <div class="btns">
+      <div class="run__game">
+        <button class="reset">
+          Reset game
+        </button>
+      </div>
+      <div class="count__game">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>      </ul>
+      </div>
+
+      <!-- <div class="btn__level">
+        <button class="level" data-level="easy">Easy</button>
+        <button class="level" data-level="medium">Medium</button>
+        <button class="level" data-level="hard">Hard</button>
+        <button class="level active" data-level="free">Free time</button>
+      </div> -->
+    </div>
+
+    <!-- Game dask -->
+    <div class="container__game">
+      <div class="card" data-comic="harly">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/harly.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="harly">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/harly.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="batman">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/batman.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="batman">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/batman.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="boom">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/boom.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="boom">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/boom.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="joker">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/joker.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="joker">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/joker.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="smile">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/smile.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="smile">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/smile.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="kaboom">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/kaboom.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="kaboom">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/kaboom.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="pow">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/pow.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="pow">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/pow.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="wing">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/wing.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="wing">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/wing.png" class="bottom__card" alt="">
+      </div>
+    </div>
+
+    <!-- Click -->
+    <div class="click">
+      <h2>You Click</h2>
+      <span class="click__count">0</span>
+    </div>
+  </section>
   <script src="./assets/js/script.js"></script>
 </body>
 
