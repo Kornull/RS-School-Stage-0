@@ -2,15 +2,16 @@ const cards = document.querySelectorAll('.card')
 const min = document.querySelector('.min')
 const sec = document.querySelector('.sec')
 const btnRun = document.querySelector('.reset')
+const btnsLevel = document.querySelectorAll('.level')
 let hasFlipCard = false;
 let blockCard = false;
 let cardlist = [];
 let oneCard, twoCard;
-let time = 1 * 60
 
 
 btnRun.addEventListener('click', ()=>{
   resetCard();
+  blockBtns()
   btnRun.disabled = true
 })
 
@@ -82,9 +83,7 @@ function resetCard() {
 }
 
 randomCard();
-
-
-
+let time = 1 * 60
 function timerGame() {
   let i = 0;
   let m = 0;
@@ -105,11 +104,17 @@ function timerGame() {
         min.textContent = `${m}`
       }
       if (time <= 0) {
+        btnsLevel.forEach(x=> x.disabled = false)
         btnRun.disabled = false
         clearInterval(timerRound)
         time = 1 * 60
         return;
       }
     }, 1000)
+}
 
+// Blocked btns
+
+function blockBtns () {
+  btnsLevel.forEach(x=> x.disabled = true)
 }

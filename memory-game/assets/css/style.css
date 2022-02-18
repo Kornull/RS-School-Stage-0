@@ -107,6 +107,7 @@ p {
   max-width: 1368px;
   margin: 0 auto;
 }
+
 .section__title {
   position: absolute;
   top: 0;
@@ -114,6 +115,7 @@ p {
   font-size: var(--font2);
   color: red;
 }
+
 /* Container game
 ================= */
 
@@ -180,14 +182,63 @@ p {
     box-shadow .8s ease;
 }
 
-.reset {
-  display: block;
-  width: 50px;
-  height: 40px;
-  margin-left: 20px;
-}
-.timer{
+
+.timer {
   font-size: var(--font2);
   color: green;
-  margin-right: 20px;
+  width: 180px;
+}
+
+/* Buttons */
+
+.btns {
+  width: 280px;
+}
+
+.btn__level {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.btns,
+.btn__level {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.reset {
+  display: block;
+  width: 120px;
+  height: 40px;
+  margin-left: 20px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  font-size: var(--font1);
+}
+
+.level {
+  width: 150px;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: var(--font1);
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #da4f6e;
+  background-image: linear-gradient(60deg, #e85475 10%, #d48444 50%, #efcb0a 100%);
+}
+
+.level:hover {
+  color:var(--color-white);
+  background-image: linear-gradient(to right, #5a70d4, #834fb9, #5a80d2, #892ad8);
+  box-shadow: 0 4px 15px 0 rgba(136, 92, 197, 0.75);
+}
+.active {
+  color:var(--color-white);
+
+  background-image: linear-gradient(to right, #5545d6, #7f228c, #908df5, #e43d3c);
+  box-shadow: 0 4px 15px 0 rgba(123, 45, 160, 0.75);
 }
