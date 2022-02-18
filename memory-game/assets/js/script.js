@@ -97,8 +97,6 @@ function resetCard() {
   countClick.textContent = 0;
   randomCard();
 
-  level.innerHTML = ''
-  getLocalStorage();
 }
 
 // Win image
@@ -114,28 +112,29 @@ function winGame(click) {
 }
 
 function setLocalStorage(click) {
-  numb++;
-  localStorage.setItem(`${numb}`, click);
+  localStorage.setItem(`${numb++}`, click);
+  getLocalStorage()
   if (numb > 10) {
     numb = 1;
   }
 }
 
 let getList = {};
-let i = 1;
+let keys = Object.keys(localStorage)
+console.log(keys.sort())
 function getLocalStorage() {
-  for (let key in localStorage) {
+  level.innerHTML = ''
+  for (let key of keys) {
     if (Number(key)) {
       getList[key] = localStorage.getItem(key);
-
       const div = document.createElement('div');
       const p = document.createElement('p');
-      p.innerHTML = `${i} game: ${localStorage.getItem(i)}`;
+      p.innerHTML = `${key} game: ${localStorage.getItem(key)}`;
       level.append(div);
       div.append(p);
-      i++;
     }
-  }console.log(getList);
+    console.log(getList);
+  }
 }
-getLocalStorage();
 randomCard();
+getLocalStorage()
