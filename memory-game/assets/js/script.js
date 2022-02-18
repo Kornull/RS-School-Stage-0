@@ -10,9 +10,10 @@ let oneCard, twoCard;
 let click = 0
 let numb = 1
 let count = 0
+let localNumb = 0
 
 
-document.querySelector('.container__game').addEventListener('click',()=> {
+document.querySelector('.container__game').addEventListener('click', () => {
   click++;
   countClick.textContent = click
 })
@@ -101,8 +102,16 @@ function setLocalStorage(click) {
   if (numb > 10) {
     numb = 1
   }
+  localCount()
 }
 window.addEventListener('beforeunload', setLocalStorage)
-// for
+function localCount() {
+  for (let key in localStorage) {
+    if (Number(key)) {
+      localNumb++
+      console.log(`${localNumb}:`, localStorage[key])
+    }
+  }
+}
 // console.log(localStorage.key(1))
 // console.log(localStorage.length)
