@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Shizuru&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&family=Shizuru&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Memory Game</title>
 </head>
@@ -13,6 +13,7 @@
 <body>
   <section class="game__dask">
     <div class="win">
+      <div class="count__clicks"></div>
       <img src="./assets/img/winner/9.png" alt="" class="winner">
     </div>
     <div class="section__title">
@@ -27,18 +28,10 @@
         </button>
       </div>
       <div class="count__game">
-        <h2>ggggg</h2>
+        <h2 class="storage">Storage</h2>
         <div class="table__records">
-
         </div>
       </div>
-
-      <!-- <div class="btn__level">
-        <button class="level" data-level="easy">Easy</button>
-        <button class="level" data-level="medium">Medium</button>
-        <button class="level" data-level="hard">Hard</button>
-        <button class="level active" data-level="free">Free time</button>
-      </div> -->
     </div>
 
     <!-- Game dask -->
@@ -93,11 +86,11 @@
       </div>
       <div class="card" data-comic="pow">
         <img src="./assets/img/question.png" class="face__card" alt="">
-        <img src="./assets/img/pow.png" class="bottom__card" alt="">
+        <img src="./assets/img/sup.png" class="bottom__card" alt="">
       </div>
       <div class="card" data-comic="pow">
         <img src="./assets/img/question.png" class="face__card" alt="">
-        <img src="./assets/img/pow.png" class="bottom__card" alt="">
+        <img src="./assets/img/sup.png" class="bottom__card" alt="">
       </div>
       <div class="card" data-comic="wing">
         <img src="./assets/img/question.png" class="face__card" alt="">
@@ -107,6 +100,23 @@
         <img src="./assets/img/question.png" class="face__card" alt="">
         <img src="./assets/img/wing.png" class="bottom__card" alt="">
       </div>
+      <div class="card" data-comic="wtf">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/wtf.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="wtf">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/wtf.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="flask">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/flask.png" class="bottom__card" alt="">
+      </div>
+      <div class="card" data-comic="flask">
+        <img src="./assets/img/question.png" class="face__card" alt="">
+        <img src="./assets/img/flask.png" class="bottom__card" alt="">
+      </div>
+
     </div>
 
     <!-- Click -->
@@ -115,6 +125,7 @@
       <span class="click__count">0</span>
     </div>
   </section>
+  <script src="./assets/js/preload.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
