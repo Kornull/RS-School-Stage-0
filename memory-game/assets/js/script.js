@@ -12,7 +12,7 @@ let gameList = [];
 let oneCard, twoCard;;
 let click = 0;
 let count = 0;
-let num = 1
+let num = 1;
 let game;
 
 
@@ -27,7 +27,7 @@ btnRun.addEventListener('click', () => {
 
 // track click
 cards.forEach((x, i) => {
-  cardlist.push(i)
+  cardlist.push(i);
   x.addEventListener('click', (ev) => {
     if (blockCard) return;
     x.classList.add('flip');
@@ -55,16 +55,16 @@ function checkCards() {
 function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
+  oneCard.style.pointerEvents = 'none'
+  twoCard.style.pointerEvents = 'none'
   count++;
   if (count === cardlist.length / 2) {
     winGame(click);
-    game = { click: `${click}` }
-    gameList.push(game)
-    maxKeyLocal()
-    // getLocalStorage();
+    game = { click: `${click}` };
+    gameList.unshift(game);
+    if (gameList.length > 10) { gameList.pop() };
+    setLocalStorage();
     resetCard();
-
-
   }
 }
 
@@ -91,6 +91,7 @@ function resetCard() {
   cards.forEach(x => {
     x.classList.remove('open');
     x.classList.remove('flip');
+    x.style.pointerEvents = 'auto';
   })
   hasFlipCard = false;
   blockCard = false;
@@ -108,59 +109,56 @@ function winGame(click) {
   happen.textContent = `you spent ${click} moves`;
   document.querySelector('.win').classList.add('wins');
 
-  let imgNum = Math.floor(Math.random() * 11)
+  let imgNum = Math.floor(Math.random() * 11);
   document.querySelector('.winner').src = `/assets/img/winner/${imgNum}.png`;
   setTimeout(() => {
     document.querySelector('.win').classList.remove('wins');
-  }, 5000)
+  }, 3000)
+}
+
+// Check key localStorage
+let keys = Object.keys(localStorage);
+keys.sort((a, b) => a - b);
+if (keys.length !== 0) {
+  num = Number(keys.pop())+1;
 }
 
 
-let i = 0
-let keysLocalStorage;
+function numCheck() {
+  if (num > 10) {
+    num = 1;
+  }
+}
 
-function setLocalStorage(num) {
-  console.log(gameList)
+let i = 0;
+function setLocalStorage() {
+  numCheck();
   if (gameList.length > 0) {
-    localStorage.setItem(`${num++}`, gameList[i++]['click']);
-    if (num > 10) {
-      num = 1;
+    localStorage.setItem(`${num}`, gameList[i]['click']);
+    num++;
+
+  }
+  getLocalStorage();
+
+}
+
+
+window.addEventListener('beforeunload', setLocalStorage)
+let getList = [];
+function getLocalStorage() {
+  let keys = Object.keys(localStorage)
+  keys.sort((a, b) => a - b);
+  level.innerHTML = '';
+  for (let key of keys) {
+    if (Number(key)) {
+      getList[key] = localStorage.getItem(key);
+      const div = document.createElement('div');
+      const p = document.createElement('p');
+      p.innerHTML = `${key} game :::: ${localStorage.getItem(key)}`;
+      level.append(div);
+      div.append(p);
     }
   }
 }
-let numKey = []
-function maxKeyLocal() {
-  keysLocalStorage = Object.keys(localStorage)
-  console.log(keysLocalStorage)
-  if (keysLocalStorage.length > 0) {
-    for (let key of keysLocalStorage) {
-      numKey.push(Number(key))
-    }
-    numKey.sort();
-    let a = numKey.pop();
-    a++;
-    setLocalStorage(a)
-  } else
-    setLocalStorage(1)
-}
-
-window.addEventListener('beforeunload', setLocalStorage)
-// let keys = Object.keys(localStorage)
-// console.log(keys.sort())
-// function getLocalStorage() {
-//   level.innerHTML = ''
-//   for (let key of keys) {
-//     if (Number(key)) {
-//       getList[key] = localStorage.getItem(key);
-//       const div = document.createElement('div');
-//       const p = document.createElement('p');
-//       p.innerHTML = `${key} game: ${localStorage.getItem(key)}`;
-//       level.append(div);
-//       div.append(p);
-//     }
-//     console.log(getList);
-//   }
-// }
 randomCard();
-setLocalStorage();
-// getLocalStorage()
+getLocalStorage();
