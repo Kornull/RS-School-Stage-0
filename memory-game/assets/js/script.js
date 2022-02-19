@@ -155,6 +155,7 @@ function getLocalStorage() {
       const div = document.createElement('div');
       const p = document.createElement('p');
       p.innerHTML = `${key} game :::: ${localStorage.getItem(key)}`;
+      div.classList.add('record__table')
       level.append(div);
       div.append(p);
     }
