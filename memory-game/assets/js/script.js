@@ -110,7 +110,7 @@ function winGame(click) {
   document.querySelector('.win').classList.add('wins');
 
   let imgNum = Math.floor(Math.random() * 11);
-  document.querySelector('.winner').src = `/assets/img/winner/${imgNum}.png`;
+  document.querySelector('.winner').src = `./assets/img/winner/${imgNum}.png`;
   setTimeout(() => {
     document.querySelector('.win').classList.remove('wins');
   }, 3000)
