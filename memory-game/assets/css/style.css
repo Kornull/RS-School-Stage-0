@@ -103,11 +103,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 1368px;
+  width: 1440px;
   margin: 0 auto;
 }
 
 .win {
+  display: none;
   position: absolute;
   top: 10%;
   left: 32%;
@@ -118,6 +119,7 @@ p {
 }
 
 .wins {
+  display: block;
   z-index: 50;
 }
 
@@ -153,8 +155,8 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 990px;
-  height: 820px;
+  width: 1378px;
+  height: 680px;
   background: #35bab4;
   margin: 90px auto 0;
   border-radius: 15px;
@@ -181,7 +183,7 @@ p {
 .card {
   position: relative;
   margin: 5px;
-  width: 18%;
+  width: 15%;
   height: 23%;
   background: rgb(255, 238, 0);
   border-radius: 10px;

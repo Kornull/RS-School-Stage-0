@@ -8,11 +8,12 @@ const happen = document.querySelector('.count__clicks');
 let hasFlipCard = false;
 let blockCard = false;
 let cardlist = [];
+let gameList = [];
 let oneCard, twoCard;;
 let click = 0;
-let numb = 1;
 let count = 0;
-let localNumb = 0;
+let num = 1
+let game;
 
 
 document.querySelector('.container__game').addEventListener('click', () => {
@@ -55,12 +56,15 @@ function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
   count++;
-  console.log(count, 'count')
   if (count === cardlist.length / 2) {
     winGame(click);
-    setLocalStorage(click);
-    getLocalStorage();
+    game = { click: `${click}` }
+    gameList.push(game)
+    maxKeyLocal()
+    // getLocalStorage();
     resetCard();
+
+
   }
 }
 
@@ -111,30 +115,52 @@ function winGame(click) {
   }, 5000)
 }
 
-function setLocalStorage(click) {
-  localStorage.setItem(`${numb++}`, click);
-  getLocalStorage()
-  if (numb > 10) {
-    numb = 1;
+
+let i = 0
+let keysLocalStorage;
+
+function setLocalStorage(num) {
+  console.log(gameList)
+  if (gameList.length > 0) {
+    localStorage.setItem(`${num++}`, gameList[i++]['click']);
+    if (num > 10) {
+      num = 1;
+    }
   }
+}
+let numKey = []
+function maxKeyLocal() {
+  keysLocalStorage = Object.keys(localStorage)
+  console.log(keysLocalStorage)
+  if (keysLocalStorage.length > 0) {
+    for (let key of keysLocalStorage) {
+      numKey.push(Number(key))
+    }
+    numKey.sort();
+    let a = numKey.pop();
+    a++;
+    setLocalStorage(a)
+  } else
+    setLocalStorage(1)
 }
 
-let getList = {};
-let keys = Object.keys(localStorage)
-console.log(keys.sort())
-function getLocalStorage() {
-  level.innerHTML = ''
-  for (let key of keys) {
-    if (Number(key)) {
-      getList[key] = localStorage.getItem(key);
-      const div = document.createElement('div');
-      const p = document.createElement('p');
-      p.innerHTML = `${key} game: ${localStorage.getItem(key)}`;
-      level.append(div);
-      div.append(p);
-    }
-    console.log(getList);
-  }
-}
+window.addEventListener('beforeunload', setLocalStorage)
+// let keys = Object.keys(localStorage)
+// console.log(keys.sort())
+// function getLocalStorage() {
+//   level.innerHTML = ''
+//   for (let key of keys) {
+//     if (Number(key)) {
+//       getList[key] = localStorage.getItem(key);
+//       const div = document.createElement('div');
+//       const p = document.createElement('p');
+//       p.innerHTML = `${key} game: ${localStorage.getItem(key)}`;
+//       level.append(div);
+//       div.append(p);
+//     }
+//     console.log(getList);
+//   }
+// }
 randomCard();
-getLocalStorage()
+setLocalStorage();
+// getLocalStorage()
