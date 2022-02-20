@@ -168,7 +168,10 @@ p {
   background: #35bab4;
   margin: 90px auto 0;
   border-radius: 15px;
-  box-shadow: 0 0 20px #0011ff;
+  /* box-shadow: 0 0 20px #0011ff; */
+  box-shadow: 0 0 10px 5px rgb(25, 0, 255),
+  5px 5px 10px 5px rgb(255, 0, 0),
+  -5px -5px 10px 5px rgb(0, 255, 0);
   perspective: 2200px;
   position: relative;
   z-index: 0;
@@ -222,7 +225,6 @@ p {
 
 .card:hover {
   transform: scale(1.1);
-
 }
 
 .card:active {
@@ -257,12 +259,14 @@ p {
   transition: box-shadow .8s ease;
 }
 
+/* Click
+=================== */
 .click {
+  margin-left: 5px;
   font-size: var(--font1);
   color: #fbff00;
   width: 150px;
   text-align: center;
-
 }
 
 .click__count {
@@ -272,8 +276,8 @@ p {
   margin: 0 auto;
 }
 
-/* Buttons */
-
+/* Buttons
+============== */
 .btns {
   width: 280px;
 }
