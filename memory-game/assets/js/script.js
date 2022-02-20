@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll('.card');
 const countClick = document.querySelector('.click__count');
-const sec = document.querySelector('.sec');
 const btnRun = document.querySelector('.reset');
 const level = document.querySelector('.table__records');
 const happen = document.querySelector('.count__clicks');
@@ -55,8 +54,8 @@ function checkCards() {
 function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
-  oneCard.style.pointerEvents = 'none'
-  twoCard.style.pointerEvents = 'none'
+  oneCard.style.pointerEvents = 'none';
+  twoCard.style.pointerEvents = 'none';
   count++;
   if (count === cardlist.length / 2) {
     winGame(click);
@@ -88,13 +87,11 @@ function randomCard() {
 
 // Reset cards
 function resetCard() {
-    cards.forEach(x => {
-      x.classList.remove('open');
-      x.classList.remove('flip');
-      x.style.pointerEvents = 'auto';
-    });
-
-
+  cards.forEach(x => {
+    x.classList.remove('open');
+    x.classList.remove('flip');
+    x.style.pointerEvents = 'auto';
+  });
   hasFlipCard = false;
   blockCard = false;
   oneCard = null;
@@ -125,6 +122,7 @@ if (keys.length !== 0) {
   num = Number(keys.pop()) + 1;
 }
 
+// Check last number localStorage
 function numCheck() {
   if (num > 10) {
     num = 1;

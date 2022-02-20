@@ -1,7 +1,9 @@
 
 const cardImg = [
   'batman',
+  'boomb',
   'boom',
+  'bum',
   'flask',
   'harly',
   'joker',
