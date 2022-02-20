@@ -88,11 +88,13 @@ function randomCard() {
 
 // Reset cards
 function resetCard() {
-  cards.forEach(x => {
-    x.classList.remove('open');
-    x.classList.remove('flip');
-    x.style.pointerEvents = 'auto';
-  })
+    cards.forEach(x => {
+      x.classList.remove('open');
+      x.classList.remove('flip');
+      x.style.pointerEvents = 'auto';
+    });
+
+
   hasFlipCard = false;
   blockCard = false;
   oneCard = null;
@@ -113,7 +115,7 @@ function winGame(click) {
   document.querySelector('.winner').src = `./assets/img/winner/${imgNum}.png`;
   setTimeout(() => {
     document.querySelector('.win').classList.remove('wins');
-  }, 3000)
+  }, 4000)
 }
 
 // Check key localStorage

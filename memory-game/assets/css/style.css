@@ -42,7 +42,7 @@ body {
   background: var(--color-black);
   line-height: 1.6;
   font-size: 15px;
-
+  overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -82,7 +82,9 @@ ul li {
 }
 
 img {
-  /* width: 30px; */
+  display: block;
+  margin: 0 auto;
+  width: 400px;
   max-width: 100%;
   height: auto;
 }
@@ -107,15 +109,23 @@ p {
   margin: 0 auto;
 }
 
+/* Winner
+=================== */
 .win {
   display: none;
   position: absolute;
-  top: 10%;
-  left: 32%;
-  width: 600px;
-  height: 800px;
-  background: none;
+  top: 0;
+  left: -150px;
+  width: 120%;
+  height: 100vh;
+  background: rgba(168, 37, 37, 0);
   overflow: hidden;
+}
+
+.win__game {
+  width: 600px;
+  height: 500px;
+  margin: 80px auto 0;
 }
 
 .wins {
@@ -123,11 +133,8 @@ p {
   z-index: 50;
 }
 
-.winner {
-  width: 100%;
-  height: auto;
-}
-
+/* Click count
+================ */
 .count__clicks {
   background: #fff;
   box-shadow: 0 0 45px #48ff00;
@@ -166,17 +173,19 @@ p {
   position: relative;
   z-index: 0;
   padding: 5px;
-
+  pointer-events: none;
 }
 
 .table.records {
   text-align: center;
 }
+
 .record__table {
   position: relative;
   text-align: center;
 }
-.record__table::after{
+
+.record__table::after {
   position: absolute;
   content: "";
   bottom: -5px;
@@ -208,15 +217,22 @@ p {
   z-index: 2;
   box-shadow: 0 0 10px #000;
   cursor: pointer;
+  pointer-events: auto;
+}
+
+.card:hover {
+  transform: scale(1.1);
+
 }
 
 .card:active {
-  transform: scale(0.8);
   transition: transform .2s;
 }
 
 .card.flip {
   transform: rotateY(180deg);
+  pointer-events: none;
+
 }
 
 .face__card,
