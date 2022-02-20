@@ -120,9 +120,8 @@ function winGame(click) {
 let keys = Object.keys(localStorage);
 keys.sort((a, b) => a - b);
 if (keys.length !== 0) {
-  num = Number(keys.pop())+1;
+  num = Number(keys.pop()) + 1;
 }
-
 
 function numCheck() {
   if (num > 10) {
@@ -136,14 +135,11 @@ function setLocalStorage() {
   if (gameList.length > 0) {
     localStorage.setItem(`${num}`, gameList[i]['click']);
     num++;
-
   }
   getLocalStorage();
-
 }
 
 
-window.addEventListener('beforeunload', setLocalStorage)
 let getList = [];
 function getLocalStorage() {
   let keys = Object.keys(localStorage)
