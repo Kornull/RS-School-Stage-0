@@ -20,8 +20,10 @@
 <body>
   <section class="game__dask">
     <div class="win">
-      <div class="count__clicks"></div>
-      <img src="" alt="" class="winner">
+      <div class="win__game">
+        <div class="count__clicks"></div>
+        <img src="" alt="" class="winner">
+      </div>
     </div>
     <div class="section__title">
       <h1>MEMORY-GAME</h1>
@@ -29,6 +31,10 @@
 
     <!-- Btns -->
     <div class="btns">
+      <div class="click">
+        <h2>You Click</h2>
+        <span class="click__count">0</span>
+      </div>
       <div class="run__game">
         <button class="reset">
           Reset game
@@ -39,6 +45,7 @@
         <div class="table__records">
         </div>
       </div>
+
     </div>
 
     <!-- Game dask -->
@@ -143,11 +150,18 @@
     </div>
 
     <!-- Click -->
-    <div class="click">
-      <h2>You Click</h2>
-      <span class="click__count">0</span>
-    </div>
+
   </section>
+  <footer class="footer">
+    <div class="footer__links">
+      <div class="year">&copy; 2022</div>
+      <div class="git"><a target="_blank" href="https://github.com/Kornull">github</a>
+      </div>
+      <div class="rss"><a target="_blank" href="https://rs.school/js-stage0/">
+          <img src="/assets/img/rs_school_js.svg" alt=""></a>
+      </div>
+    </div>
+  </footer>
   <script src="./assets/js/preload.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
