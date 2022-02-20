@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll('.card');
 const countClick = document.querySelector('.click__count');
-const sec = document.querySelector('.sec');
 const btnRun = document.querySelector('.reset');
 const level = document.querySelector('.table__records');
 const happen = document.querySelector('.count__clicks');
@@ -55,8 +54,8 @@ function checkCards() {
 function openClass() {
   oneCard.classList.add('open');
   twoCard.classList.add('open');
-  oneCard.style.pointerEvents = 'none'
-  twoCard.style.pointerEvents = 'none'
+  oneCard.style.pointerEvents = 'none';
+  twoCard.style.pointerEvents = 'none';
   count++;
   if (count === cardlist.length / 2) {
     winGame(click);
@@ -92,7 +91,7 @@ function resetCard() {
     x.classList.remove('open');
     x.classList.remove('flip');
     x.style.pointerEvents = 'auto';
-  })
+  });
   hasFlipCard = false;
   blockCard = false;
   oneCard = null;
@@ -113,17 +112,17 @@ function winGame(click) {
   document.querySelector('.winner').src = `./assets/img/winner/${imgNum}.png`;
   setTimeout(() => {
     document.querySelector('.win').classList.remove('wins');
-  }, 3000)
+  }, 4000)
 }
 
 // Check key localStorage
 let keys = Object.keys(localStorage);
 keys.sort((a, b) => a - b);
 if (keys.length !== 0) {
-  num = Number(keys.pop())+1;
+  num = Number(keys.pop()) + 1;
 }
 
-
+// Check last number localStorage
 function numCheck() {
   if (num > 10) {
     num = 1;
@@ -136,14 +135,11 @@ function setLocalStorage() {
   if (gameList.length > 0) {
     localStorage.setItem(`${num}`, gameList[i]['click']);
     num++;
-
   }
   getLocalStorage();
-
 }
 
 
-window.addEventListener('beforeunload', setLocalStorage)
 let getList = [];
 function getLocalStorage() {
   let keys = Object.keys(localStorage)

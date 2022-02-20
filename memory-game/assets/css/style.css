@@ -42,7 +42,7 @@ body {
   background: var(--color-black);
   line-height: 1.6;
   font-size: 15px;
-
+  overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -82,7 +82,9 @@ ul li {
 }
 
 img {
-  /* width: 30px; */
+  display: block;
+  margin: 0 auto;
+  width: 400px;
   max-width: 100%;
   height: auto;
 }
@@ -103,19 +105,28 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
+/* Winner
+=================== */
 .win {
   display: none;
   position: absolute;
-  top: 10%;
-  left: 32%;
-  width: 600px;
-  height: 800px;
-  background: none;
+  top: 0;
+  left: -150px;
+  width: 120%;
+  height: 100vh;
+  background: rgba(168, 37, 37, 0);
   overflow: hidden;
+}
+
+.win__game {
+  width: 600px;
+  height: 500px;
+  margin: 80px auto 0;
 }
 
 .wins {
@@ -123,11 +134,8 @@ p {
   z-index: 50;
 }
 
-.winner {
-  width: 100%;
-  height: auto;
-}
-
+/* Click count
+================ */
 .count__clicks {
   background: #fff;
   box-shadow: 0 0 45px #48ff00;
@@ -156,27 +164,33 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 1378px;
+  width: 100%;
+  max-width: 1068px;
   height: 680px;
   background: #35bab4;
   margin: 90px auto 0;
   border-radius: 15px;
-  box-shadow: 0 0 20px #0011ff;
+  /* box-shadow: 0 0 20px #0011ff; */
+  box-shadow: 0 0 10px 5px rgb(25, 0, 255),
+    5px 5px 10px 5px rgb(255, 0, 0),
+    -5px -5px 10px 5px rgb(0, 255, 0);
   perspective: 2200px;
   position: relative;
   z-index: 0;
   padding: 5px;
-
+  pointer-events: none;
 }
 
 .table.records {
   text-align: center;
 }
+
 .record__table {
   position: relative;
   text-align: center;
 }
-.record__table::after{
+
+.record__table::after {
   position: absolute;
   content: "";
   bottom: -5px;
@@ -208,15 +222,21 @@ p {
   z-index: 2;
   box-shadow: 0 0 10px #000;
   cursor: pointer;
+  pointer-events: auto;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card:active {
-  transform: scale(0.8);
   transition: transform .2s;
 }
 
 .card.flip {
   transform: rotateY(180deg);
+  pointer-events: none;
+
 }
 
 .face__card,
@@ -241,12 +261,15 @@ p {
   transition: box-shadow .8s ease;
 }
 
+/* Click
+=================== */
 .click {
+  margin-left: 5px;
   font-size: var(--font1);
   color: #fbff00;
   width: 150px;
   text-align: center;
-
+  margin-bottom: 15px;
 }
 
 .click__count {
@@ -256,10 +279,11 @@ p {
   margin: 0 auto;
 }
 
-/* Buttons */
-
+/* Buttons
+============== */
 .btns {
   width: 280px;
+  margin-right: 15px;
 }
 
 .btns,
@@ -293,4 +317,50 @@ p {
 .count__game {
   color: #e0e0e0;
   font-size: var(--font1);
+}
+
+/* Footer
+=============== */
+
+.footer {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  width: 100%;
+  height: 60px;
+  font-size: var(--font1);
+  color: var(--color-white);
+}
+
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 50px;
+  background: #000;
+}
+
+.git a{
+  color: var(--color-white);
+  transition: color .3s ease;
+}
+.git a:hover{
+  color: #0077ff;
+  text-decoration: underline;
+}
+.rss {
+  display: flex;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+  transition: filter .05s linear;
+}
+.rss:hover{
+  filter: invert(38%) sepia(67%) saturate(7500%) hue-rotate(204deg) brightness(109%) contrast(103%);
+  box-shadow:
+   0 5px 0 -4px rgb(255, 255, 255);
 }
