@@ -112,6 +112,7 @@ function closeCards() {
 
 // Shuffle cards
 function randomCard() {
+  cardCount = 24
   cards.forEach(x => {
     let randomNumb = Math.floor(Math.random() * cardCount);
     x.style.order = randomNumb;
@@ -192,4 +193,3 @@ function getLocalStorage() {
 }
 randomCard();
 getLocalStorage();
-resetCard();
