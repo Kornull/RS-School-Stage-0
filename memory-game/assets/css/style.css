@@ -123,6 +123,10 @@ p {
   overflow: hidden;
 }
 
+.win.light {
+  left: -50px;
+}
+
 .win__game {
   width: 600px;
   height: 500px;
@@ -181,6 +185,10 @@ p {
   pointer-events: none;
 }
 
+.container__game.light {
+  max-width: 500px;
+}
+
 .table.records {
   text-align: center;
 }
@@ -223,6 +231,13 @@ p {
   box-shadow: 0 0 10px #000;
   cursor: pointer;
   pointer-events: auto;
+}
+
+.card.light {
+  width: 30%;
+}
+.card.sleep{
+  display: none;
 }
 
 .card:hover {
@@ -293,7 +308,9 @@ p {
   flex-direction: column;
 }
 
-.reset {
+.reset,
+.low,
+.hard {
   display: block;
   width: 190px;
   height: 50px;
@@ -308,10 +325,21 @@ p {
   transition: box-shadow .3s ease;
 }
 
-.reset:hover {
+.reset:hover,
+.low:hover,
+.hard:hover {
   color: #e5ff00;
   background-image: linear-gradient(to right, #eeff00, #f60202, #000000, #000000);
   box-shadow: 0 4px 15px 0 #ffffff;
+}
+
+.low.active,
+.hard.active {
+  pointer-events: none;
+  color: #e5ff00;
+  background-image: linear-gradient(to right, #eeff00, #f60202, #000000, #000000);
+  box-shadow: 0 4px 15px 0 #ffffff;
+
 }
 
 .count__game {
@@ -344,14 +372,16 @@ p {
   background: #000;
 }
 
-.git a{
+.git a {
   color: var(--color-white);
   transition: color .3s ease;
 }
-.git a:hover{
+
+.git a:hover {
   color: #0077ff;
   text-decoration: underline;
 }
+
 .rss {
   display: flex;
   align-items: center;
@@ -359,8 +389,9 @@ p {
   height: 40px;
   transition: filter .05s linear;
 }
-.rss:hover{
+
+.rss:hover {
   filter: invert(38%) sepia(67%) saturate(7500%) hue-rotate(204deg) brightness(109%) contrast(103%);
   box-shadow:
-   0 5px 0 -4px rgb(255, 255, 255);
+    0 5px 0 -4px rgb(255, 255, 255);
 }
