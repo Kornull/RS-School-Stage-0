@@ -16,7 +16,7 @@ let click = 0;
 let count = 0;
 let num = 1;
 let game;
-let cardCount
+let cardCount;
 
 hardGame.addEventListener('click', (ev) => {
   ev.target.classList.add('active');
@@ -36,7 +36,7 @@ function lightGame() {
   gameTable.classList.toggle('light');
   cards.forEach((x, i) => {
     if (i < 12) { x.classList.toggle('sleep') };
-    x.classList.toggle('light')
+    x.classList.toggle('light');
   });
   resetCard();
 }
@@ -79,9 +79,9 @@ function checkCards() {
 // Add class open
 function openClass() {
   if(oneCard.classList.contains('light')){
-    cardCount = 12
+    cardCount = 12;
   } else {
-    cardCount = 24
+    cardCount = 24;
   }
 
     oneCard.classList.add('open');
