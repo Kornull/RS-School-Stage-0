@@ -192,3 +192,4 @@ function getLocalStorage() {
 }
 randomCard();
 getLocalStorage();
+resetCard();
