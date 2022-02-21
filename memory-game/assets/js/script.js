@@ -3,6 +3,10 @@ const countClick = document.querySelector('.click__count');
 const btnRun = document.querySelector('.reset');
 const level = document.querySelector('.table__records');
 const happen = document.querySelector('.count__clicks');
+const lowGame = document.querySelector('.low');
+const hardGame = document.querySelector('.hard');
+const gameWin = document.querySelector('.win');
+const gameTable = document.querySelector('.container__game');
 
 let hasFlipCard = false;
 let blockCard = false;
@@ -13,6 +17,28 @@ let click = 0;
 let count = 0;
 let num = 1;
 let game;
+
+
+hardGame.addEventListener('click', (ev) => {
+  ev.target.classList.add('active');
+  lowGame.classList.remove('active');
+  lightGame();
+})
+
+lowGame.addEventListener('click', (ev) => {
+  ev.target.classList.add('active');
+  hardGame.classList.remove('active');
+  lightGame();
+})
+
+// Easy/crazy game
+function lightGame() {
+  gameWin.classList.toggle('light');
+  gameTable.classList.toggle('light');
+  cards.forEach((x, i)=>{
+    if (i < 12) {x.classList.toggle('sleep')}
+    x.classList.toggle('light')});
+}
 
 
 document.querySelector('.container__game').addEventListener('click', () => {
