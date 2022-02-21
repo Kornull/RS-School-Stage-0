@@ -10,14 +10,13 @@ const gameTable = document.querySelector('.container__game');
 
 let hasFlipCard = false;
 let blockCard = false;
-let cardlist = [];
 let gameList = [];
 let oneCard, twoCard;;
 let click = 0;
 let count = 0;
 let num = 1;
 let game;
-
+let cardCount
 
 hardGame.addEventListener('click', (ev) => {
   ev.target.classList.add('active');
@@ -35,10 +34,11 @@ lowGame.addEventListener('click', (ev) => {
 function lightGame() {
   gameWin.classList.toggle('light');
   gameTable.classList.toggle('light');
-  cards.forEach((x, i)=>{
-    if (i < 12) {x.classList.toggle('sleep')};
-    x.classList.toggle('light')});
-    resetCard();
+  cards.forEach((x, i) => {
+    if (i < 12) { x.classList.toggle('sleep') };
+    x.classList.toggle('light')
+  });
+  resetCard();
 }
 
 
@@ -53,7 +53,6 @@ btnRun.addEventListener('click', () => {
 
 // track click
 cards.forEach((x, i) => {
-  cardlist.push(i);
   x.addEventListener('click', (ev) => {
     if (blockCard) return;
     x.classList.add('flip');
@@ -79,20 +78,27 @@ function checkCards() {
 
 // Add class open
 function openClass() {
-  oneCard.classList.add('open');
-  twoCard.classList.add('open');
-  oneCard.style.pointerEvents = 'none';
-  twoCard.style.pointerEvents = 'none';
-  count++;
-  if (count === cardlist.length / 2) {
-    winGame(click);
-    game = { click: `${click}` };
-    gameList.unshift(game);
-    if (gameList.length > 10) { gameList.pop() };
-    setLocalStorage();
-    resetCard();
+  if(oneCard.classList.contains('light')){
+    cardCount = 12
+  } else {
+    cardCount = 24
   }
-}
+
+    oneCard.classList.add('open');
+    twoCard.classList.add('open');
+    oneCard.style.pointerEvents = 'none';
+    twoCard.style.pointerEvents = 'none';
+    count++;
+    if (count === cardCount / 2) {
+      winGame(click);
+      game = { click: `${click}` };
+      gameList.unshift(game);
+      if (gameList.length > 10) { gameList.pop() };
+      setLocalStorage();
+      resetCard();
+    }
+  }
+
 
 //  Close cards
 function closeCards() {
@@ -107,7 +113,7 @@ function closeCards() {
 // Shuffle cards
 function randomCard() {
   cards.forEach(x => {
-    let randomNumb = Math.floor(Math.random() * cardlist.length);
+    let randomNumb = Math.floor(Math.random() * cardCount);
     x.style.order = randomNumb;
   })
 }
