@@ -36,8 +36,9 @@ function lightGame() {
   gameWin.classList.toggle('light');
   gameTable.classList.toggle('light');
   cards.forEach((x, i)=>{
-    if (i < 12) {x.classList.toggle('sleep')}
+    if (i < 12) {x.classList.toggle('sleep')};
     x.classList.toggle('light')});
+    resetCard();
 }
 
 
