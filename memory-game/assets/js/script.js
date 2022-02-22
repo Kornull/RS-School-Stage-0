@@ -70,7 +70,11 @@ cards.forEach((x, i) => {
 // Card matching check
 function checkCards() {
   if (oneCard.dataset.comic === twoCard.dataset.comic) {
-    setTimeout(() => openClass(), 500);
+    cards.forEach(x=>x.style.pointerEvents='none')
+    setTimeout(() => {
+      cards.forEach(x=>x.style.pointerEvents='auto')
+      openClass()
+    }, 1000);
     return;
   }
   closeCards();
@@ -88,6 +92,7 @@ function openClass() {
     twoCard.classList.add('open');
     oneCard.style.pointerEvents = 'none';
     twoCard.style.pointerEvents = 'none';
+
     count++;
     if (count === cardCount / 2) {
       winGame(click);
