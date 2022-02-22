@@ -7,7 +7,11 @@ const lowGame = document.querySelector('.low');
 const hardGame = document.querySelector('.hard');
 const gameWin = document.querySelector('.win');
 const gameTable = document.querySelector('.container__game');
+
 const getList = ['vagoss-A', 'vagoss-B', 'vagoss-C', 'vagoss-D', 'vagoss-E', 'vagoss-F', 'vagoss-G', 'vagoss-H', 'vagoss-I', 'vagoss-J'];
+
+
+
 let hasFlipCard = false;
 let blockCard = false;
 let gameList = [];
@@ -158,6 +162,7 @@ function winGame(click) {
 // Check key localStorage
 let keys = Object.keys(localStorage);
 if (keys.length !== 0) {
+
   keys.forEach(x => {
     if (getList.includes(x)) { num++ }
   })
@@ -170,6 +175,7 @@ function numCheck() {
   }
 }
 const arr = ['a', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+
 
 let i = 0;
 function setLocalStorage() {

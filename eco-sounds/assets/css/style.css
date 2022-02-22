@@ -1,0 +1,266 @@
+/* Zeroing
+========================*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+:root {
+  --color-gold: #d1be86;
+  --color-black: #000;
+  --color-white: #fff;
+  --font1: 18px;
+}
+
+body {
+  width: 100%;
+  font-size: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background: #000000;
+  line-height: 1.6;
+  font-size: 15px;
+  overflow: hidden;
+
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul ol,
+ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #fff;
+  transition: color .3s linear;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-gold);
+}
+
+/* Header
+=============== */
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background: #000;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1360px;
+  align-items: center;
+  padding: 0px 20px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: url('../img/logo/logo.svg') center center/cover no-repeat;
+  transition: filter .3s linear;
+}
+
+.header__logo.active {
+  filter: invert(38%) sepia(31%) saturate(488%) hue-rotate(354deg) brightness(88%) contrast(85%);
+}
+
+.header__logo:hover {
+  filter: invert(9%) sepia(99%) saturate(7300%) hue-rotate(248deg) brightness(81%) contrast(132%);
+}
+
+
+.bird__list {
+  cursor: pointer;
+  display: flex;
+}
+
+.bird-item {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: var(--font1);
+  transition: color .2s linear;
+}
+
+.bird-item.play {
+  color: var(--color-gold);
+}
+
+.bird-item:hover {
+  color: var(--color-gold);
+}
+
+/* Main
+=================== */
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+
+.bg__img {
+  display: block;
+  width: 100%;
+  height:100vh;
+}
+.btns {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  width: 150px;
+  height: 200px;
+}
+
+/* Buttons
+================ */
+.btn__play--pause {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: url('../img/buttonImg/play.svg') center center/cover no-repeat;
+  transition: box-shadow .1s ease,
+  filter .4s linear;margin-bottom: 15px;
+}
+
+
+.btn__play--pause.play {
+  filter: drop-shadow(0px 0px 20px #0720ff);
+  background: url('../img/buttonImg/pause.svg') center center/cover no-repeat;
+}
+
+svg {
+  background: NONE;
+}
+.btn__repeat {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  background: url('../img/buttonImg/shuffle.svg') center center/cover no-repeat;
+}
+
+.btn__repeat.repeat {
+  filter: drop-shadow(0px 0px 10px #4400ff);
+}
+
+.repeat__song:hover,
+.btn__repeat:hover,
+.btn__play--pause:hover {
+  filter: drop-shadow(0px 0px 20px #ff0000);
+}
+
+/* Footer
+================== */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #000000;
+  margin: 0 auto;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__link {
+  padding-top: 10px;
+  height: 90%;
+}
+
+.rs__link {
+  width: 100px;
+  height: 100%;
+  transition: filter 0.3s linear;
+}
+
+.rs__link:hover {
+  filter: invert(75%) sepia(22%) saturate(536%) hue-rotate(7deg) brightness(100%) contrast(86%);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Custom audio-player</title>
+</head>
+
+<body>
+  <div class="container__bg--img">
+    <div class="container">
+      <section class="section">
+        <div class="audio__player">
+          <div class="header__player">
+
+            <div class="num__track">0 &sol; 0</div>
+            <div class="condition__player">Stop</div>
+            <div class="repeat__button">
+              <button class="btn__repeat">
+                <img src="./assets/img/repeat/repeat2_121125.svg" alt="">
+            </div></button>
+          </div> <!-- ./header__player -->
+
+          <div class="section__title">
+            <h1 class="name__artist">name</h1>
+          </div>
+          <div class="section__subtitle">
+            <h2 class="song__title">song</h2>
+          </div>
+          <div class="btn__start--stop" id="controls">
+            <button class="btn__left" type="button"></button>
+            <button class="btn__play" type="button"></button>
+            <button class="btn__right" type="button"></button>
+          </div> <!-- ./btn__start--stop -->
+          <div class="audio__img">
+            <img class="atrist__image" src="" alt="">
+          </div> <!-- ./audio__img -->
+
+          <div class="time__track">
+            <input type="range" value="0" min="0" max="100" class="progress">
+          </div>
+
+          <div class="time">
+            <div class="current">0:00</div>
+            <div class="divider">&sol;</div>
+            <div class="length">0:00</div>
+          </div>
+        </div> <!-- ./audio__player -->
+      </section>
+    </div><!-- ./container -->
+  </div> <!-- ./container__bg--img -->
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
