@@ -74,7 +74,7 @@ function checkCards() {
     setTimeout(() => {
       cards.forEach(x=>x.style.pointerEvents='auto')
       openClass()
-    }, 1000);
+    }, 700);
     return;
   }
   closeCards();
@@ -100,7 +100,9 @@ function openClass() {
       gameList.unshift(game);
       if (gameList.length > 10) { gameList.pop() };
       setLocalStorage();
-      resetCard();
+      setTimeout(()=>{
+      resetCard()
+      },2000)
     }
   }
 
