@@ -8,13 +8,14 @@ const hardGame = document.querySelector('.hard');
 const gameWin = document.querySelector('.win');
 const gameTable = document.querySelector('.container__game');
 
+const getList = ['Attempt-a', 'Attempt-B', 'Attempt-C', 'Attempt-D', 'Attempt-E', 'Attempt-F', 'Attempt-G', 'Attempt-H', 'Attempt-I', 'Attempt-J'];
 let hasFlipCard = false;
 let blockCard = false;
 let gameList = [];
 let oneCard, twoCard;;
 let click = 0;
 let count = 0;
-let num = 1;
+let num = 0;
 let game;
 let cardCount;
 
@@ -70,9 +71,9 @@ cards.forEach((x, i) => {
 // Card matching check
 function checkCards() {
   if (oneCard.dataset.comic === twoCard.dataset.comic) {
-    cards.forEach(x=>x.style.pointerEvents='none')
+    cards.forEach(x => x.style.pointerEvents = 'none')
     setTimeout(() => {
-      cards.forEach(x=>x.style.pointerEvents='auto')
+      cards.forEach(x => x.style.pointerEvents = 'auto')
       openClass()
     }, 700);
     return;
@@ -82,30 +83,29 @@ function checkCards() {
 
 // Add class open
 function openClass() {
-  if(oneCard.classList.contains('light')){
+  if (oneCard.classList.contains('light')) {
     cardCount = 12;
   } else {
     cardCount = 24;
   }
 
-    oneCard.classList.add('open');
-    twoCard.classList.add('open');
-    oneCard.style.pointerEvents = 'none';
-    twoCard.style.pointerEvents = 'none';
+  oneCard.classList.add('open');
+  twoCard.classList.add('open');
+  oneCard.style.pointerEvents = 'none';
+  twoCard.style.pointerEvents = 'none';
 
-    count++;
-    if (count === cardCount / 2) {
-      winGame(click);
-      game = { click: `${click}` };
-      gameList.unshift(game);
-      if (gameList.length > 10) { gameList.pop() };
-      setLocalStorage();
-      setTimeout(()=>{
+  count++;
+  if (count === cardCount / 2) {
+    winGame(click);
+    game = { click: `${click}` };
+    gameList.unshift(game);
+    if (gameList.length > 10) { gameList.pop() };
+    setLocalStorage();
+    setTimeout(() => {
       resetCard()
-      },2000)
-    }
+    }, 2000)
   }
-
+}
 
 //  Close cards
 function closeCards() {
@@ -158,43 +158,53 @@ function winGame(click) {
 
 // Check key localStorage
 let keys = Object.keys(localStorage);
-keys.sort((a, b) => a - b);
 if (keys.length !== 0) {
-  num = Number(keys.pop()) + 1;
+
+  keys.forEach(x => {
+    if (getList.includes(x)) { num++ }
+  })
 }
 
 // Check last number localStorage
 function numCheck() {
-  if (num > 10) {
-    num = 1;
+  if (num > 9) {
+    num = 0;
   }
 }
+const arr = ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','a']
+
 
 let i = 0;
 function setLocalStorage() {
-  numCheck();
+  if (num > 9) {
+    num = 0;
+  }
   if (gameList.length > 0) {
-    localStorage.setItem(`${num}`, gameList[i]['click']);
+    localStorage.setItem(`Attempt-${arr[num]}`, gameList[i]['click']);
     num++;
+
   }
   getLocalStorage();
 }
 
 
-let getList = [];
+
 function getLocalStorage() {
+  let j = 1
   let keys = Object.keys(localStorage)
-  keys.sort((a, b) => a - b);
+  keys.sort()
   level.innerHTML = '';
   for (let key of keys) {
-    if (Number(key)) {
-      getList[key] = localStorage.getItem(key);
+    if (getList.includes(key)) {
       const div = document.createElement('div');
       const p = document.createElement('p');
-      p.innerHTML = `${key} game :::: ${localStorage.getItem(key)}`;
+      p.innerHTML = `${key.replace(key[key.length - 1], j++)} :::: ${localStorage.getItem(key)}`;
       div.classList.add('record__table')
       level.append(div);
       div.append(p);
+      if (j > 10) {
+        j = 1
+      }
     }
   }
 }
