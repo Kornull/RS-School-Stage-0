@@ -395,3 +395,26 @@ p {
   box-shadow:
     0 5px 0 -4px rgb(255, 255, 255);
 }
+
+@media (max-width:768px) {
+  .container__game {
+    width: 100%;
+    max-width: 650px;
+  }
+  .card {
+    width: 20%;
+    height: 100px;
+  }
+ .card.light {
+   width: 30%;
+   height:23%
+ }
+ .reset,
+.low,
+.hard {
+  width: 120px;
+}
+.btns{
+  width: 150px;
+}
+}
