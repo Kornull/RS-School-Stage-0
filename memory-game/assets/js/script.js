@@ -171,7 +171,7 @@ function numCheck() {
     num = 0;
   }
 }
-const arr = ['a', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+const arr = [ 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','a']
 
 
 let i = 0;
