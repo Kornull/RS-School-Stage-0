@@ -236,7 +236,8 @@ p {
 .card.light {
   width: 30%;
 }
-.card.sleep{
+
+.card.sleep {
   display: none;
 }
 
@@ -405,6 +406,22 @@ p {
     width: 20%;
     height: 100px;
   }
+
+  .card.light {
+    width: 30%;
+    height: 23%
+  }
+
+  .reset,
+  .low,
+  .hard {
+    width: 120px;
+  }
+
+  .btns {
+    width: 150px;
+  }
+
  .card.light {
    width: 30%;
    height:23%
