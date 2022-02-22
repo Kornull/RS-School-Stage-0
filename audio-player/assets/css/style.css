@@ -1,0 +1,273 @@
+/* Zeroing
+========================*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+
+body {
+  width: 100%;
+  font-size: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.6;
+  font-size: 15px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* Container
+==================*/
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 50px 15px;
+  background: rgba(110, 170, 100, 0.445);
+
+}
+
+.container__bg--img {
+  width: 100%;
+  height: 100%;
+  background: #000 url('../img/music-muzyka-art.jpg') center center/cover no-repeat;
+}
+
+/* Section */
+.section {
+  display: block;
+  margin: 119px auto;
+  width: 350px;
+  height: 600px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #0717ed;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+/* Button
+  ================ */
+.btn__right,
+.btn__left {
+  width: 50px;
+  height: 50px;
+}
+
+.btn__left {
+  background: url('../btnSvg/left.svg') center center/cover no-repeat;
+}
+
+.btn__right {
+  background: url('../btnSvg/right.svg') center center/cover no-repeat;
+}
+
+.btn__play {
+  width: 80px;
+  height: 80px;
+  background: none;
+
+  background: url('../btnSvg/play.svg') center center/cover no-repeat;
+}
+
+.btn__play.play {
+  background: url('../btnSvg/pause.svg') center center/cover no-repeat;
+
+}
+
+.btn__start--stop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 80px;
+}
+
+.btn__repeat {
+  width: 40px;
+  height: 40px;
+  background: none;
+}
+
+.btn__repeat.active img {
+  filter: invert(51%) sepia(96%) saturate(1117%) hue-rotate(78deg) brightness(113%) contrast(130%);
+}
+
+/* Player
+================== */
+.audio__player {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(179deg, #351b6c, #a44ba2, #f28100);
+}
+
+/* Header player
+================== */
+.header__player {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 20px;
+  color: #fff;
+  height: 50px;
+  background: #000;
+}
+
+.repeat__button,
+.num__track,
+.condition__player {
+  width: 30%;
+  text-align: center;
+}
+
+/* Body player */
+.name__artist {
+  padding-top: 20px;
+}
+
+.section__subtitle {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+
+.audio__img {
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 15%;
+  background: #000 url('../img/music-muzyka-art.jpg') center center/cover no-repeat;
+  border: 2px solid #000;
+  box-shadow: 0 0 20px #000;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.time__track {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg,rgb(245, 0, 0),rgb(255, 251, 0) 0%,rgb(4, 220, 248) 0%);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  box-shadow: 0px 0px 10px 1px rgb(0, 0, 0) ;
+  border-radius: 10px;
+  transition: opacity .2s;
+}
+.progress:hover {
+  opacity: 1;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 7px;
+  background: rgb(0, 60, 255);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* .time__track input[type="range"] {
+  width: 250px;
+} */
+
+
+
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100px;
+  font-size: 20px;
+  color: #fff;
+}

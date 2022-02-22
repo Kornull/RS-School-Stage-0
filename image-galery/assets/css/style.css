@@ -1,0 +1,252 @@
+/* Zeroing
+========================*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+:root {
+  --color-gold: #d1be86;
+  --color-black: #000;
+  --color-gray: #e0e0e0;
+  --color-white: #fff;
+  --font1: 20px;
+  --font2: 28px;
+}
+
+body {
+  width: 100%;
+  font-size: 100%;
+  font-family: 'Source Serif 4', sans-serif;
+  font-weight: 400;
+  color: var(--color-black);
+  background: var(--color-black);
+  line-height: 1.6;
+  font-size: 15px;
+
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul ol,
+ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  /* width: 30px; */
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* ============ */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1050px;
+  height: 90px;
+  margin: 0 auto;
+  background: #5c6bb7;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 0 30px;
+  box-shadow: 0 0 10px var(--color-white);
+  border: 1px solid var(--color-gold);
+}
+
+.logo {
+  width: 75px;
+  height: 65px;
+  background: url('../img/camera.png') center center/cover no-repeat;
+}
+.galery__name h1{
+  color: var(--color-gold);
+  font-size: var(--font2);
+}
+.img__galery {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1050px;
+  background: var(--color-black);
+  margin: 0px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px#fff;
+  border: 2px solid var(--color-gold);
+  font-size: var(--font1);
+  color: var(--color-gray);
+  margin-bottom: 10px;
+}
+
+.gallery-img {
+  display: block;
+  width: 330px;
+  height: 200px;
+  margin-bottom: 10px;
+  transition: transform .2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border:1px solid var(--color-gray)
+}
+
+.gallery-img:hover {
+  border-radius: 15px;
+  box-shadow: 0 0 15px 0 var(--color-white);
+  transform: scale(1.2);
+}
+.btn__input {
+  position: relative;
+}
+.search__img {
+  position: absolute;
+  top:0;
+  left: -35px;
+  width: 30px;
+  height: 30px;
+  background: url('../img/search.png') center center/cover no-repeat;
+  cursor: pointer;
+}
+input {
+
+  display: block;
+  font-family: inherit;
+  font-size: var(--font1);
+  width: 300px;
+  border-radius: 10px;
+  border: 2px solid var(--color-black);
+  height: 30px;
+  padding: 10px;
+}
+.clean__text{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: rgb(255, 255, 255) url('../img/clean.png') center center/cover no-repeat;
+  border-radius: 50%;
+}
+input.active {
+  box-shadow: 0 0 10px var(--color-gold);
+
+}
+
+::placeholder {
+  color: inherit;
+  font-size: var(--font1);
+  line-height: 2;
+  color: #b3b3b3;
+  /* padding: 2px 0 0 13px; */
+}
+
+/* Footer
+==================== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1050px;
+  height: 60px;
+  background: #5c6bb7;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--color-white);
+  border: 1px solid var(--color-gold);
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer__link {
+  text-align: center;
+  width: 110px;
+  height: 30px;
+}
+
+.footer__link a {
+  color: var(--color-white);
+  transition: color .2s ease;
+}
+
+.footer__link a:hover {
+  color: #f5f109;
+}
+
+.rs__link {
+  margin-top: -5px;
+  transition: filter .5s ease;
+}
+
+.rs__link:hover {
+  filter: invert(99%) sepia(64%) saturate(2861%) hue-rotate(357deg) brightness(99%) contrast(94%);
+}

@@ -402,7 +402,6 @@ p {
     width: 100%;
     max-width: 650px;
   }
-
   .card {
     width: 20%;
     height: 100px;
@@ -422,4 +421,17 @@ p {
   .btns {
     width: 150px;
   }
+
+ .card.light {
+   width: 30%;
+   height:23%
+ }
+ .reset,
+.low,
+.hard {
+  width: 120px;
+}
+.btns{
+  width: 150px;
+}
 }
