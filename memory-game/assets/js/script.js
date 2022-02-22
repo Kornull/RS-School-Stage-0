@@ -7,7 +7,7 @@ const lowGame = document.querySelector('.low');
 const hardGame = document.querySelector('.hard');
 const gameWin = document.querySelector('.win');
 const gameTable = document.querySelector('.container__game');
-const getList = ['Attempt-a', 'Attempt-B', 'Attempt-C', 'Attempt-D', 'Attempt-E', 'Attempt-F', 'Attempt-G', 'Attempt-H', 'Attempt-I', 'Attempt-J'];
+const getList = ['vagoss-A', 'vagoss-B', 'vagoss-C', 'vagoss-D', 'vagoss-E', 'vagoss-F', 'vagoss-G', 'vagoss-H', 'vagoss-I', 'vagoss-J'];
 let hasFlipCard = false;
 let blockCard = false;
 let gameList = [];
@@ -177,7 +177,7 @@ function setLocalStorage() {
     num = 0;
   }
   if (gameList.length > 0) {
-    localStorage.setItem(`Attempt-${arr[num]}`, gameList[i]['click']);
+    localStorage.setItem(`vagoss-${arr[num]}`, gameList[i]['click']);
     num++;
 
   }
