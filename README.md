@@ -20,4 +20,4 @@ https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/image-galery/
 
 memory-game:
 
-ttps://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/memory-game/
+https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/memory-game/
