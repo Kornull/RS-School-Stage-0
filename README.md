@@ -8,6 +8,6 @@
 
 ## [Eco-sounds](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/eco-sounds/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/eco-sounds)
 
-## [image-galery](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/image-galery/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/image-galery)
+## [Image-galery](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/image-galery/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/image-galery)
 
-## [memory-game](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/memory-game/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/memory-game)
+## [Memory-game](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/memory-game/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/memory-game)
