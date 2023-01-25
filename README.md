@@ -1,5 +1,5 @@
 
-# Tasks completed in the course JavaScript|Stage 0
+# Tasks completed in the course JavaScript | Stage 0
 
 
 ## [Portfolio](https://rolling-scopes-school.github.io/kornull-JSFEPRESCHOOL/portfolio/) | [code](https://github.com/Kornull/RSSchool-stage0/tree/portfolio-part3)
